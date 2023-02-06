@@ -24,8 +24,9 @@ Using **EzDimension** is quite easy. it works with **Mouse** or **VR** input. so
 * Trigger event when selection changed and when mouse hovered on a dimension.
 * diffrent types of offset to avoid Zfighting and text coverage behind the scene objects.
 
+---
 
-### dependencies :
+### Dependencies :
 
 After install **input System** from package manager create an **Event System** and select it in the hierarchy, then in the inspector click on the **Replace with InputSystemUIInputModule** button. You can read the [**input system documentation**](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.5/manual/index.html).
 
@@ -74,54 +75,103 @@ congratulations, you made your first dimension!
 
 <br/><br/>
 
-# General Settings
-
-<br/><br/>
+# Setting Types
+* ## General Parameters :
 
 ![image](https://user-images.githubusercontent.com/88411269/216851756-74f0d795-6e22-4bc3-9b59-5e47a110b82a.png)
 
 For each dimensions we have some general settings in the starter script. if you take a look at the inspector when **StarterGO** is selected, you can find the **General** section.
 these settings are share between more than one dimension. For example **Text Size** is share between all of them and arrow radius is share between **Point To Point**, **Linear** and **Aligned** dimension. You can read about the details of each option in the [**General References**](#GeneralReferences) section.
 
-<br/><br/>
+* ## Colors :
 
 ![image](https://user-images.githubusercontent.com/88411269/216856990-c7379445-a363-4cf6-a997-085c27e341cb.png)
 
 the color section is shared between the dimensions too. . If you change the “Number Color”, It changes all of the dimensions number’s color except which dimensions that mark as individual. We’ll explain individuality of each dimension along the way. Last three colors will multiply with the dimension’s color when they are selected or when we hover mouse or VR-Interactor on number of an object. It works with a Lerp function line this : 
 
-    if (mouse hovered on a text of a dimension) >> Color = Color.Lerp( numberColor, hoveredTint, 0.5f );
+    if (mouse hovered on a text of a dimension)
+          Color = Color.Lerp( numberColor, hoveredTint, 0.5f );
 
 ---
 
 <br/><br/>
 
 # Dimension Types
-<br/><br/>
-### Point To Point Dimension
+
+* ### Point To Point Dimension
 Point to point dimension is simple type of the measurement. It takes two Vector3 position and calculate the direct distance between these two points.
 When run the void “EzPointToPointDimension()” by click on the button in your UI, The “EzPointToPointDimension” gameobject will create under the StarterGO but all of its child are invisible till you hit the first click on an object that has a collider. After that while you didn’t hit the second click, the dimension it measure the first click and the current mouse position (if mouse hovers on an object with collider). after hit the second click your dimension will add to the “dimensionsList” in the starter script and its done.
 If you select the “EzPointToPointDimension” gameobject under the “StarterGO” and take a look at the inspector you can see that the dimension copied the parameters from starter script inside itself.
 
+<br/><br/>
+
 ![image](https://user-images.githubusercontent.com/88411269/216855671-748c5473-5272-4f18-b502-b36fb1254dc5.png)
 
+There are two types of parameters in all of the dimensions. Some of them are always individual and some of them get their value from ValueReference Component (which is the starter script), until you didn’t mark “Is Individual”. For example in this type of dimension, everything under the “IsIndividual” toggle (all parameters except “ValueReference”) can have its local value if you turn on this Boolean.so if you need to have control from another script on a dimension separately, first of all you need to turn on this option at the beginning.if you turn it off again, everything is fine and the values sets to your settings from the starter script because each scripts carries the starter script with itself in the “ValueReference” field.
 
 <br/><br/>
-### Linear Dimension
+
+![image](https://user-images.githubusercontent.com/88411269/216858500-332b98f0-fa90-4e30-99cf-a9736b64d2f9.png)
+
+By turning on “IsIndividual” We can have same dimension type with different settings.
+
+<br/><br/>
+
+![IsDynamic_PointToPointDimension](https://user-images.githubusercontent.com/88411269/216858764-47cbd7af-16ce-4935-914c-8ba57de36b06.gif)
+
+There is another option named “Is Dynamic”. If this option be true the dimension will update if target objects transforms changes. 
+(If dimension is not individual it’s depend on starterScript/General/IsDynamic).You can check other parameters in [**General References**](#GeneralReferences) .
+
+
+<br/><br/>
+* ### Linear Dimension
+* 
+linear dimension used to measure distance between two points in one main Axis. Its never rotate to any direction even if the target points have different position in R3. Measurement direction parameter determine the direction of measurement. 
+
+<br/><br/>
+
+![image](https://user-images.githubusercontent.com/88411269/216859029-48c5485b-bb39-40af-b0d3-4ef62724e09a.png)
+
+For example if you choose “X” direction, it will measure the line between two target points in X direction. Also we can always choose the offset direction to other two direction. (measurement direction and offset direction can’t have same value, so if you choose same value, to avoid error code will replace the offset direction to one of other directions)
+
+<br/><br/>
+
+![image](https://user-images.githubusercontent.com/88411269/216859217-7a73bc02-3be8-4b59-a71e-656e628cf588.png)
+
+1-Measurement Direction = X, Offset Direction = Z.
+2-Measurement Direction = Z, Offset Direction = X.
+We have the same rule in Y direction. If you choose to measure the height of an object, the measurement direction will be “Y” and you can choose the offset direction between “X” or “Z”.
+
+<br/><br/>
+
+![image](https://user-images.githubusercontent.com/88411269/216859258-fda2327b-bcdd-47ab-972d-7f9e93efa05d.png)
+
+If the offset distance be less than the distance between two target points, the dimension will automatically change the secondary lines to be sure that it always connect target points
+
+<br/><br/>
+
+![LinearDimension_Draw_ChangeOffsetDistance](https://user-images.githubusercontent.com/88411269/216859337-ce20a36f-f6c0-4ae9-97d0-0ac5f3d5530a.gif)
+
+Draw the Linear Direction in “Z” axis and offset to "X" axis and changing the offset distance.
+
+<br/><br/>
+
+![image](https://user-images.githubusercontent.com/88411269/216859356-eeec3929-5b8b-4f1e-b2f7-7e8d55269389.png)
+
+If measured points where too close and text can’t feet between the secondary lines, there is an option to change the text position and arrow direction.
+
+<br/><br/>
+* ### Aligned Dimension
 
 
 
 <br/><br/>
-### Aligned Dimension
+* ### Angle Dimension
 
 
 
 <br/><br/>
-### Angle Dimension
-
-
-
-<br/><br/>
-### Area Measure
+* ### Area Measure
 
 
 
