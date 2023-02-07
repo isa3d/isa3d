@@ -1,7 +1,7 @@
-<br /><br />
+<br />
 
 # Easy Dimension Measurement System For Unity
-<br />
+
 
 # Introduction :
 
@@ -11,11 +11,16 @@
 
 Using **EzDimension** is quite easy. it works with **Mouse** or **VR** input.
  We have 5 types of measurement :
-1. Point To Point
-1. Linear
-1. Aligned
-1. Angle
-1. Area
+ 
+ 
+|Types         |                       What To Measure          |MainLine          |Guide 	          | Arrows           | Number           |Border            |Arc               |Surface           |
+|--------------|------------------------------------------------|:----------------:|:----------------:|:----------------:|:----------------:|:----------------:|:----------------:|:----------------:|
+|Point To Point| Direct distance of two points                  |:heavy_check_mark:|                  |:heavy_check_mark:|:heavy_check_mark:|                  |                  |                  |
+|Linear        | Distance of two points along XYZ Axis          |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  |                  |                  |
+|Aligned       | Distance of two points along their orientation |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  |                  |                  |
+|Angle         | The angle between three points                 |:heavy_check_mark:|                  |                  |:heavy_check_mark:|                  |:heavy_check_mark:|                  |
+|Area          | The area between selected points               |:heavy_check_mark:|                  |                  |:heavy_check_mark:|:heavy_check_mark:|                  |:heavy_check_mark:|
+
 <br /><br />
 
  ## key Features :
@@ -35,14 +40,11 @@ Using **EzDimension** is quite easy. it works with **Mouse** or **VR** input.
 
 ---
 
-<br /><br />
+<br />
 
 # Dependencies :
 
-<br />
-
 ## Input System :
-
 
 After install **input System** from package manager create an **Event System** and select it in the hierarchy, then in the inspector click on the **Replace with InputSystemUIInputModule** button. You can read the [**input system documentation**](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.5/manual/index.html).
 
@@ -63,11 +65,9 @@ if you need to use this package inside a **VR** game or app, there is a **Sample
 
 ---
 
-<br />
+<br/>
 
 # Quick start :
-
-<br />
 
 1. Create an empty game object and rename it to **StarterGO** and add **EzDimStarter** component on it:
 
@@ -86,14 +86,14 @@ if you need to use this package inside a **VR** game or app, there is a **Sample
 
 <img src="https://user-images.githubusercontent.com/88411269/216846372-5bf205e8-d45c-462c-90d9-feb1da2fc6d5.png" width="500">
 
-<br/><br/>
+<br/>
 
 3. Select the **StarterGO**, then fill the references and set the parameters. If it’s your first run, we recommend to check the sample scene first.
 Consider that the first field should be empty to test the dimensions with mouse input. We’ll explain how to use it in VR in the [**Using EzDimension in VR**](#VRSetting) section.
 
 <img src="https://user-images.githubusercontent.com/88411269/216846440-11e8cad1-d26a-451e-83a6-f01bbbef0c4a.png" width="926">
 
-<br/><br/>
+<br/>
 
 4 . When you fill the references and set the parameters, create a ground object and another two objects, check them having “Collider” component. you can create your first dimension by click on the button that you connected to “EzPointToPointDimension()” void.
 
@@ -107,8 +107,6 @@ congratulations, you made your first dimension!
 
 # Settings Notes :
 ## General Parameters :
-
-
 
 <img src="https://user-images.githubusercontent.com/88411269/216851756-74f0d795-6e22-4bc3-9b59-5e47a110b82a.png" width="500">
 
@@ -136,9 +134,11 @@ the color section is shared between the dimensions too. . If you change the “N
 # Dimension Types :
 
 ## Point To Point Dimension :
+
 Point to point dimension is simple type of the measurement. It takes two Vector3 position and calculate the direct distance between these two points.
 When run the void “EzPointToPointDimension()” by click on the button in your UI, The “EzPointToPointDimension” gameobject will create under the StarterGO but all of its child are invisible till you hit the first click on an object that has a collider. After that while you didn’t hit the second click, the dimension it measure the first click and the current mouse position (if mouse hovers on an object with collider). after hit the second click your dimension will add to the “dimensionsList” in the starter script and its done.
 If you select the “EzPointToPointDimension” gameobject under the “StarterGO” and take a look at the inspector you can see that the dimension copied the parameters from starter script inside itself.
+
 
 <br/>
 
@@ -199,17 +199,17 @@ Draw the Linear Direction in “Z” axis and offset to "X" axis and changing th
 
 If measured points where too close and text can’t feet between the secondary lines, there is an option to change the text position and arrow direction.
 
-<br/><br/>
+<br/>
 ## Aligned Dimension :
 
 
 
-<br/><br/>
+<br/>
 ## Angle Dimension :
 
 
 
-<br/><br/>
+<br/>
 ## Area Measure :
 
 
