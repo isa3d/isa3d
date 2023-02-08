@@ -131,7 +131,14 @@ the color section is shared between the dimensions too. . If you change the “N
 
 <br/>
 
+
+
 # Dimension Types :
+
+
+
+
+
 
 ## Point To Point Dimension :
 
@@ -162,6 +169,10 @@ There is another option named “Is Dynamic”. If this option be true the dimen
 (If dimension is not individual it’s depend on starterScript/General/IsDynamic).You can check other parameters in [**General References**](#GeneralReferences) .
 
 <br/>
+
+
+
+
 
  ## Linear Dimension :
  
@@ -200,73 +211,118 @@ Draw the Linear Direction in “Z” axis and offset to "X" axis and changing th
 If measured points where too close and text can’t feet between the secondary lines, there is an option to change the text position and arrow direction.
 
 <br/>
+
+
+
+
+
 ## Aligned Dimension :
 
+<br/>
 
+Aligned dimension is useful to measure distance between two points in one of main coordinate planes or a costume plane.it support rotated objects as well.
+
+<img src="https://user-images.githubusercontent.com/88411269/217420788-0f777d3d-d8e8-4a7b-b790-066b0a7410b3.png" width="500">
+
+The settings are almost similar to linear dimension. Instead of measurement in “Linear Dimension” there is measurement plane option. 
 
 <br/>
+
+<img src="https://user-images.githubusercontent.com/88411269/217422629-662161ee-1547-44ee-941a-1f5e9b4b1752.png" width="500">
+
+Also, we have an option named “Reverse Direction”. The function of this Boolean is exactly same as multiply offset distance by -1. In this type of dimension the positive direction of offset distance is based on which target point hit first. Assume we have “point A” and “point B”. during the creating this dimension if click on “point A” and then click on “point B”, the positive offset direction is different the left side of the border of AB. So depends on witch point is first, the positive direction is different.by this Boolean you can avoid to have negative offset distance to reverse offset direction positive side.
+
+<br/>
+
+<img src="https://user-images.githubusercontent.com/88411269/217424746-44af1c23-6ea0-4869-be44-cd3c76990a0f.gif" width="500">
+
+There is four states for direction plane (XZ, XY, ZY, Free). If you set the direction offset to Free before creating the dimension, after selecting A and B points, a plane appears and you can dictate your custom offset direction. by click on the appeared plane which is the input of the “Aligned Dim Free Mode Plane Prefab”, the position of this point will store into “Direction Point in Free Mode”. So if you don’t change this value and switch the Direction plane, you can change it to Free mode again later. Or by editing this value you can change the direction. be aware that if you use free mode, it does not support transform change yet. Turn off “Is Dynamic” if you want to use it in any moving object. We have this on our road map and we will make it possible in the next updates.
+
+
+
+
+
 ## Angle Dimension :
 
+<br/>
+
+Angle dimension measures the angle between three points. These points can be in the main planes (XZ, XY, YZ) or in the custom plane.
+It measures 0 to 180 degrees. 
+ 
+<br/>
+
+<img src="https://user-images.githubusercontent.com/88411269/217425866-5e915710-f361-4adf-8a24-31f90e317901.png" width="500">
 
 
 <br/>
+
+<img src="https://user-images.githubusercontent.com/88411269/217530046-9374c24e-05d7-4091-bafe-1512d90aa8b3.png" width="500">
+
+There is four parts in an angle dimension. two lines, a number and a plane with a transparent material to draw the arc between two lines. The arc GameObject scale can controls by the “Arc Scale” parameter. Other features depend on its material shader. The shader have to has Color and Degree option. Other options are optional based what we need.
+
+<br/>
+
+<img src="https://user-images.githubusercontent.com/88411269/217530372-34f0c439-9dfe-4baa-abd5-494372b8c63c.png" width="500">
+
+If the text’s width was larger than the space between two curve, text position and rotation will change and it goes outside. 
+There is a vector2 input named “Text Offset If Not Fit”. You can control the position of the text by changing this input.
+
+<br/>
+
+<img src="https://user-images.githubusercontent.com/88411269/217530740-b7539441-4389-40d2-a8d1-77c1abff63c3.gif" width="500">
+
+The angle dimension like others supports dynamic transform If you check “Is Dynamic”.
+
+<br/>
+
+![AngleDimension_Free](https://user-images.githubusercontent.com/88411269/217531103-d6c8ef1d-aef6-416e-9cf3-f17dae02b457.gif)
+
+The angle dimension can draw in main planes or in custom plane. To draw it on custom plane change the “Angle Measurement Plane” to “Free” and just click where you need to measure.
+
+<br/>
+
+To reduce the any intersection between the dimension and target objects you can increase the “Normal Offset” if the dimension is individual or “Hit Normal Offset” in the starter script if it’s not individual. It will get the first hit point normal and move the dimension along it forward. Also this parameters helps to avoid Z-fighting. Always set it to a small amount.
+
+<br/><br/>
+
+
+
+
+
+
+
 ## Area Measure :
 
+<br/>
 
+Area Measure can calculate the area between some points. There is some option to make the text camera base or rotate it. Because they are public variables you can control them from other script for example based on your camera transform. It’s up to you how you want control the text orientation on the surface. The always has lay down to the area surface.
 
+<br/>
 
+<img src="https://user-images.githubusercontent.com/88411269/217532089-f0f665e7-58f7-486a-badd-ce7a1575f31e.png" width="500">
 
-.
-<details><summary>CLICK ME</summary>
-<p>
+<br/>
 
-#### We can hide anything, even code!
+<img src="https://user-images.githubusercontent.com/88411269/217532420-782710b7-e115-4416-b440-8c89d16e1456.png" width="500">
 
-```ruby
-   puts "Hello World"
-```
+The “Area Measure” has four main parts. handles, surface, border and the number text. 
+When you click on a surface, the handle prefab will instantiate where you clicked. and if you press right click, the draw function will call and the area measure will create. 
 
-</p>
-</details>
+<br/>
 
-1. A
-1. A
+<img src="https://user-images.githubusercontent.com/88411269/217532878-b0909a77-cae2-4537-bbb8-2112ced2d468.gif" width="500">
 
+If you make the handle prefab selectable or moveable in your project, the area measure supports dynamic transform and will update if you changed any handle. Consider that there is no “IsDynamic” Boolean and if you change the position of any handle it always updates the area.
 
-- ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `#f03c15`
-- ![#c5f015](https://placehold.co/15x15/c5f015/c5f015.png) `#c5f015`
-- ![#1589F0](https://placehold.co/15x15/1589F0/1589F0.png) `#1589F0`
+<br/>
 
-<span style="color:orange;">Word up</span>
+<img src="https://user-images.githubusercontent.com/88411269/217533595-2ab4127b-b9b7-4083-9a4d-45febe300334.gif" width="500">
 
+Same as angle dimension and aligned dimension, the area measure also can draw on the main planes ( XZ, XY, ZY ) and on a custom plane if you set the “Area Measurement Plane” to “Free”. When you choose “Free” and start to draw an area measure on an inclined plane or a ramp, the script get the first hit point normal and define the custom draw plane based on that. 
 
+<br/>
 
-
-1. [go to heading](#VRSetting)
-
-
-Text that is not a quote
-
-> Text that is a quote
-
-
-**This is bold text**
-
-
-| Rank | THING-TO-RANK |
-|-----:|---------------|
-|     1|               |
-|     2|               |
-|     3|               |
-
-
-```
-aaa = "AAA"
-bbb = "BBB"
-```
   
-    asda as dasddda
-    
 
     
     
