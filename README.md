@@ -322,19 +322,39 @@ Same as angle dimension and aligned dimension, the area measure also can draw on
 
 <br/>
 
+ --- 
+ 
+<br/><br/>
   
-
-    
-    
-<a name="VRSetting">
+<a name="Scripting Manual">
   </a>
   
+# Scripting Manual :
+ 
+![FlowChart](https://user-images.githubusercontent.com/88411269/217855770-6beb9c7a-ac8d-42e5-befd-e4c23f1217f3.png)
+
+
+ 
+<br/><br/>
+
+<a name="VRSetting">
+  </a>
+
 ### Using EzDimension in VR :
 
 
+
+
+
+<br/>
+
+ --- 
+ 
+<br/><br/>
+
 <a name="GeneralReferences">
   </a>
-  
+
 ### General References :
   
   
