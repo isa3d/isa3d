@@ -468,53 +468,6 @@ If you want to work just with Mouse input, there is no need to have “”DrawIn
         CreateDimension(mainParent, arrowPrefab);
         Funcs.SetActiveAllChilds(this.transform, false);
     }
-
-    public void CreateDimension(GameObject _mainParent, GameObject _arrowPrefab)
-    {
-        mainLineGO = new GameObject("MainLine");
-        mainLine = mainLineGO.gameObject.AddComponent<LineRenderer>();
-        numberGO = new GameObject("EzDimensionDistanceNumber");
-        numberParent = new GameObject("NumberParent");
-        arrows = new GameObject("Arrows");
-
-        // dynamic objects :
-        dynamicTransforms = new GameObject("dynamicTransforms");
-        objectATransformGO = new GameObject("objectATransformGO");
-        objectBTransformGO = new GameObject("objectBTransformGO");
-        pointATransformGO = new GameObject("pointATransformGO");
-        pointBTransformGO = new GameObject("pointBTransformGO");
-        dynamicTransforms.transform.parent = this.transform;
-        objectATransformGO.transform.parent = dynamicTransforms.transform;
-        objectBTransformGO.transform.parent = dynamicTransforms.transform;
-        pointATransformGO.transform.parent = objectATransformGO.transform;
-        pointBTransformGO.transform.parent = objectBTransformGO.transform;
-
-        // main line :
-        mainLineGO.transform.parent = _mainParent.transform;
-
-        // number :
-        numberGO.transform.parent = numberParent.transform;
-        numberParent.transform.parent = _mainParent.transform;
-        number = numberGO.AddComponent<TextMeshPro>();
-        numberCol = numberGO.gameObject.AddComponent<BoxCollider>();
-
-        // arrows :
-        arrows.transform.parent = _mainParent.transform;
-        arrowAGO = Instantiate(_arrowPrefab, arrows.transform);
-        arrowAGO.name = "Arrow A";
-        arrowBGO = Instantiate(_arrowPrefab, arrows.transform);
-        arrowBGO.name = "Arrow B";
-
-        // turn off shadow
-        // main line
-        mainLine.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
-        mainLine.receiveShadows = false;
-        // arrows
-        arrowAGO.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
-        arrowAGO.GetComponent<MeshRenderer>().receiveShadows = false;
-        arrowBGO.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
-        arrowBGO.GetComponent<MeshRenderer>().receiveShadows = false;
-    }
     
 ```
 
@@ -529,7 +482,7 @@ There is more specific details in [**Scripting API**](#ScriptingAPI) section.
 <a name="VRSetting">
   </a>
 
-### Using EzDimension in VR :
+# Using EzDimension in VR :
 
 <br/>
 
@@ -676,10 +629,16 @@ the only diffrences are condition of going to the next step and how we get the `
  
 <br/><br/>
 
+
+
+
+
+
+
 <a name="GeneralReferences">
   </a>
 
-### General References :
+# General References :
   
   
   
@@ -691,9 +650,71 @@ the only diffrences are condition of going to the next step and how we get the `
  
 <br/><br/>
 
+
+
+
+
+
+
+
 <a name="ScriptingAPI">
   </a>
 
-### Scripting API :
+# Scripting API :
+
+## Point To Point Dimension :
 
 
+
+
+<br/>
+
+
+
+
+
+ ## Linear Dimension :
+ 
+<br/>
+
+
+<br/>
+
+
+
+
+
+## Aligned Dimension :
+
+<br/>
+
+
+
+
+<br/>
+
+
+
+
+
+
+## Angle Dimension :
+
+<br/>
+
+
+
+<br/>
+
+
+
+
+
+
+## Area Measure :
+
+<br/>
+
+
+  
+<br/>
