@@ -67,7 +67,11 @@ if you need to use this package inside a **VR** game or app, there is a **Sample
 
 <br/>
 
-# Quick start :
+
+<a name="QuickStart">
+  </a>
+  
+# Quick Start :
 
 1. Create an empty game object and rename it to **StarterGO** and add **EzDimStarter** component on it:
 
@@ -326,7 +330,7 @@ Same as angle dimension and aligned dimension, the area measure also can draw on
  
 <br/><br/>
   
-<a name="Scripting Manual">
+<a name="ScriptingManual">
   </a>
   
 # Scripting Manual :
@@ -527,11 +531,146 @@ There is more specific details in [**Scripting API**](#ScriptingAPI) section.
 
 ### Using EzDimension in VR :
 
+<br/>
 
+![FlowChart_VR](https://user-images.githubusercontent.com/88411269/218101925-17dd1bf1-86c5-4565-b7af-bd6e18f5ee11.png)
 
+To use VR first you can download **VR Sample Script** from package manager to see how you should setUp the **Easy Dimension Measurement System** for VR.this script is fully compatible with **XR Interaction Toolkit 2.2.0**.because there is various VR integration package we won't incloud the VR scene inside the package to avoid any conflict and messy errors in your scene.instead of this we will look at the main logic of using **Easy Dimension** inside your VR scene.
 
+If you go back to the [**Quick Start**](#QuickStart) section and look at the inspector when **StarterGO** is selected, you can see that the first field is **Draw In Vr Comp**. so please add the **DrawInVR.cs** on the **StarterGO** and drag and drop **StarterGO** inside the **Draw In Vr Comp** section. 
 
 <br/>
+
+There is some difference between **Mouse Input** and **VR Input**. As We explained in the [**Scripting Manual**](#ScriptingManual) section, when using the **Mouse Input** we have some draw step for every dimensions and each step will pass after mouse click. we used ``` Camera.ScreenPointToRay(Mouse.current.position.ReadValue()) ``` to catch ``` raycastHit ``` . when using VR obviously can't use ``` ScreenPointToRay() ```, mouse position and click to pass draw steps. instead of thouse we should use ``` bool ray = rayInteractor.TryGetCurrent3DRaycastHit(out hit) ``` to catch our hit and instead of mouse click we need to have some boolean that turns true after each desiered button pressed. As you can guess, we need to get one of our ** ray interactors** from one hand and feed it to the **DrawInVR.rayInteractor**.<br/>
+
+<img src="https://user-images.githubusercontent.com/88411269/218111506-6520f279-2f57-46c8-a271-a3ce448310cc.jpg" width="500">
+
+<br/>
+
+<br/>
+
+> **Note** <br/>
+> **DrawInVR.cs** works dependently with **EzDimStarter** component. they should add on the same gameObject that we called it **StarterGO** and you need to drag and drop **StarterGO** inside the **Draw In Vr Comp** field.
+
+<br/><br/>
+
+Let's have one example to make sure everything is clear. if you download the **DrawInVR.cs** sample from package manager and open it you can see there is some public void like what we had inside the **EzDimStarter**. 
+
+```C#
+
+    public void VR_EzPointToPointDimension(EzDimStarter _starterScript)
+    {
+        if (!_starterScript.isCreating)
+        {
+            firstStep = true;
+            secoundStep = thirdStep = fourthStep = fifthStep = sixthStep = false;
+            _starterScript.isCreating = true;  // this bool will set to false after draw the dimension.
+            _starterScript.SelectionList.Clear();
+            Funcs.UpdateAll(_starterScript, _starterScript.DimensionsList, _starterScript.SelectionList);
+            GameObject EzPointToPointDimensionGO = new GameObject("VR_EzPointToPointDimension");
+            EzPointToPointDimensionGO.transform.parent = _starterScript.transform;
+            var p2PDim = EzPointToPointDimensionGO.AddComponent<PointToPointDimension>();
+
+            if (_starterScript.createDimensionCort != null)
+                StopCoroutine(_starterScript.createDimensionCort);
+
+            _starterScript.createDimensionCort = StartCoroutine(CreatePointToPointDimension(_starterScript, p2PDim));
+
+            _starterScript.DimensionsList.Add(EzPointToPointDimensionGO.gameObject); // add the parent GO to the list.
+        }
+    }
+    
+```
+
+<br/>
+
+it's quite similar than what we did before. note that we didn't have a separate dimension list and we still send some data to the **Starter Script**.
+
+the creation process happends inside the ``` IEnumerator CreatePointToPointDimension() ```. it's quite similar to what we did before when using mouse input too.
+
+<br/>
+
+```C#
+
+    IEnumerator CreatePointToPointDimension(EzDimStarter _starterScript, PointToPointDimension _p2PDim)
+    {
+        _p2PDim.secondDrawStep = false;
+
+        while (_p2PDim.isDone != true)
+        {
+            if (firstStep && secoundStep && !thirdStep && !_p2PDim.secondDrawStep && _starterScript.isCreating)
+            {
+                RaycastHit hit;
+                bool ray = rayInteractor.TryGetCurrent3DRaycastHit(out hit);
+                if (ray)
+                {
+                    _p2PDim.pointA = hit.point;
+                    _p2PDim.objectA = hit.transform.gameObject;
+                    _p2PDim.objectATransformGO.transform.position = hit.transform.position;
+                    _p2PDim.objectATransformGO.transform.rotation = hit.transform.rotation;
+                    _p2PDim.objectATransformGO.transform.localScale = hit.transform.localScale;
+                    _p2PDim.pointATransformGO.transform.position = _p2PDim.pointA;
+
+                    if (!hit.transform.gameObject.TryGetComponent<EzDynamicTargetObject>(out EzDynamicTargetObject EzDynamicTarget))
+                    {
+                        hit.transform.gameObject.AddComponent<EzDynamicTargetObject>().p2PDimComponentsList.Add(_p2PDim);
+                        hit.transform.gameObject.GetComponent<EzDynamicTargetObject>().starterScript = _starterScript;
+                    }
+                    else
+                    {
+                        var p2PDimComp = hit.transform.gameObject.GetComponent<EzDynamicTargetObject>();
+                        p2PDimComp.p2PDimComponentsList.Add(_p2PDim);
+                    }
+
+                    _p2PDim.secondDrawStep = true;
+                }
+
+            }
+            else if (_p2PDim.secondDrawStep == true)
+            {
+                Funcs.SetActiveAllChilds(_p2PDim.gameObject.transform, true);
+
+                RaycastHit hit;
+                bool ray = rayInteractor.TryGetCurrent3DRaycastHit(out hit);
+                if (ray)
+                {
+                    _p2PDim.pointB = hit.point;
+                    _p2PDim.objectB = hit.transform.gameObject;
+                    _p2PDim.objectBTransformGO.transform.position = hit.transform.position;
+                    _p2PDim.objectBTransformGO.transform.rotation = hit.transform.rotation;
+                    _p2PDim.objectBTransformGO.transform.localScale = hit.transform.localScale;
+                    _p2PDim.pointBTransformGO.transform.position = _p2PDim.pointB;
+
+                    _p2PDim.UpdateDimension(_p2PDim.pointA, _p2PDim.pointB, _p2PDim.lineThickness, _p2PDim.textSize, _p2PDim.textOffset,
+                        _p2PDim.numberColor, _p2PDim.mainColor, _p2PDim.arrowColor,
+                        _p2PDim.mainLineMat, _p2PDim.arrowMat, _p2PDim.cameraTransform, _p2PDim.mainParent, _p2PDim.arrowHeight,
+                        InternalFunctions.LengthUnitCalculator(_starterScript), _p2PDim.textTowardsCameraOffset, _p2PDim.NormalOffset);
+
+                    if (firstStep && secoundStep && thirdStep)
+                    {
+                        if (!hit.transform.gameObject.TryGetComponent<EzDynamicTargetObject>(out EzDynamicTargetObject EzDynamicTarget))
+                        {
+                            hit.transform.gameObject.AddComponent<EzDynamicTargetObject>().p2PDimComponentsList.Add(_p2PDim);
+                            hit.transform.gameObject.GetComponent<EzDynamicTargetObject>().starterScript = _starterScript;
+                        }
+                        else
+                        {
+                            var p2PDimComp = hit.transform.gameObject.GetComponent<EzDynamicTargetObject>();
+                            p2PDimComp.p2PDimComponentsList.Add(_p2PDim);
+                        }
+                        _starterScript.isCreating = false; // end of drawing of the dimension.
+                        _p2PDim.secondDrawStep = false;
+                        _p2PDim.isDone = true;
+                    }
+                }
+            }
+            yield return null;
+        }
+    }
+
+```
+the only diffrences are condition of going to the next step and how we get the ``` raycastHit ```. other steps are almost similar than what we did with mouse input.
+
 
  --- 
  
