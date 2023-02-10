@@ -330,10 +330,195 @@ Same as angle dimension and aligned dimension, the area measure also can draw on
   </a>
   
 # Scripting Manual :
+![FlowChart_Mouse_VR](https://user-images.githubusercontent.com/88411269/218064085-cd827ca6-4782-4548-ad83-ad6cc4e22485.png)
+
+As you can see in the flow chart, EzDimStarter component is the core of other inputs and components. Inside this script we have nine public void that we connected them to the buttons to create, hide, unhide, delete and update dimensions as we mentioned in “”Quick Start”” section. 
+If you need to use this script in VR, you should add “DrawInVR” component on the same object that you added “EzDimStarter” . we will explain how it works in VR in the “” Using EzDimension in VR”” section.
+If you want to work just with Mouse input, there is no need to have “”DrawInVR””, so our chart will be like this : 
+
+![FlowChart_Mouse](https://user-images.githubusercontent.com/88411269/218064249-752e9671-75f6-4add-8593-45dc156e83d3.png)
+
+ When one of the mentioned voids inside “EzDimStarter” called by pressing a UI button, for example assume you pressed “Point To Point”,  this code will run :
  
-![FlowChart](https://user-images.githubusercontent.com/88411269/217855770-6beb9c7a-ac8d-42e5-befd-e4c23f1217f3.png)
+ ```C#
+ 
+    public void EzPointToPointDimension()
+    {
+        if (!isCreating)
+        {
+            isCreating = true;  // this bool will set to false after draw the dimension.
+            SelectionList.Clear(); // deselect selected dimensions
+            Funcs.UpdateAll(this, DimensionsList, SelectionList);
+            GameObject EzPointToPointDimensionGO = new GameObject("EzPointToPointDimension");
+            EzPointToPointDimensionGO.transform.parent = this.transform;
+            var p2PDim = EzPointToPointDimensionGO.AddComponent<PointToPointDimension>();
 
+            if (createDimensionCort != null)
+                StopCoroutine(createDimensionCort);
 
+            createDimensionCort = StartCoroutine(CreatePointToPointDimension(p2PDim));
+
+            DimensionsList.Add(EzPointToPointDimensionGO.gameObject); // add the parent GO to the list.
+        }
+    }
+ 
+ ````
+ 
+ At the beginning it checkes that isCreating bool is off to avoid duplicate of creation process. Then it will turn on isCreating and it will deselect the selected dimensions by clearing the “selectionList” list. Then it call the “updateAll” function from “EzDimFunctions” to update dimensions color based on new cleared “selectionList”. Now everything is ready to create a gameObject as child of this gameObject to add “pointToPointDimension” component. No the code will loop inside the “IEnumerator CreatePointToPointDimension” while added “pointToPointDimension” component “isDone” bool is not true. This Boolean will true at the end of this IEnumerator. When this part passed, the new dimension will add to “dimensionsList” list as a new dimension.
+ 
+ Lets check what is inside the “IEnumerator CreatePointToPointDimension” :
+ 
+ ```C#
+     IEnumerator CreatePointToPointDimension(PointToPointDimension _p2PDim)
+    {
+        bool secondDrawStep = false;
+        Vector2 p0MousePosOnScreen = Vector2.zero;
+
+        while (_p2PDim.isDone != true)
+        {
+            if (Mouse.current.leftButton.wasPressedThisFrame && !secondDrawStep && !_p2PDim.isDone && isCreating == true)
+            {
+                p0MousePosOnScreen = Mouse.current.position.ReadValue();
+                RaycastHit hit;
+                Ray ray = rendererCamera.gameObject.GetComponent<Camera>().ScreenPointToRay(Mouse.current.position.ReadValue());
+                if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+                {
+                    _p2PDim.firstPointHitNormal = hit.normal;
+                    _p2PDim.pointA = hit.point;
+                    _p2PDim.objectA = hit.transform.gameObject;
+                    _p2PDim.objectATransformGO.transform.position = hit.transform.position;
+                    _p2PDim.objectATransformGO.transform.rotation = hit.transform.rotation;
+                    _p2PDim.objectATransformGO.transform.localScale = hit.transform.localScale;
+                    _p2PDim.pointATransformGO.transform.position = _p2PDim.pointA;
+
+                    if (!hit.transform.gameObject.TryGetComponent<EzDynamicTargetObject>(out EzDynamicTargetObject EzDynamicTarget))
+                    {
+                        hit.transform.gameObject.AddComponent<EzDynamicTargetObject>().p2PDimComponentsList.Add(_p2PDim);
+                        hit.transform.gameObject.GetComponent<EzDynamicTargetObject>().starterScript = this;
+                    }
+                    else
+                    {
+                        var p2PDimComp = hit.transform.gameObject.GetComponent<EzDynamicTargetObject>();
+                        p2PDimComp.p2PDimComponentsList.Add(_p2PDim);
+                    }
+
+                    secondDrawStep = true;
+                }
+            }
+            else if (secondDrawStep && p0MousePosOnScreen != Mouse.current.position.ReadValue())
+            {
+                Funcs.SetActiveAllChilds(_p2PDim.gameObject.transform, true);
+                RaycastHit hit;
+                Ray ray = rendererCamera.gameObject.GetComponent<Camera>().ScreenPointToRay(Mouse.current.position.ReadValue());
+
+                if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+                {
+                    _p2PDim.pointB = hit.point;
+                    _p2PDim.objectB = hit.transform.gameObject;
+                    _p2PDim.objectBTransformGO.transform.position = hit.transform.position;
+                    _p2PDim.objectBTransformGO.transform.rotation = hit.transform.rotation;
+                    _p2PDim.objectBTransformGO.transform.localScale = hit.transform.localScale;
+                    _p2PDim.pointBTransformGO.transform.position = _p2PDim.pointB;
+
+                    _p2PDim.UpdateDimension(_p2PDim.pointA, _p2PDim.pointB, _p2PDim.lineThickness, _p2PDim.textSize, _p2PDim.textOffset,
+                        _p2PDim.numberColor, _p2PDim.mainColor, _p2PDim.arrowColor,
+                        _p2PDim.mainLineMat, _p2PDim.arrowMat, _p2PDim.cameraTransform, _p2PDim.mainParent, _p2PDim.arrowHeight,
+                        InternalFunctions.LengthUnitCalculator(this), textTowardsCameraOffset, hitNormalOffset);
+
+                    if (Mouse.current.leftButton.wasPressedThisFrame && secondDrawStep)
+                    {
+                        if (!hit.transform.gameObject.TryGetComponent<EzDynamicTargetObject>(out EzDynamicTargetObject EzDynamicTarget))
+                        {
+                            hit.transform.gameObject.AddComponent<EzDynamicTargetObject>().p2PDimComponentsList.Add(_p2PDim);
+                            hit.transform.gameObject.GetComponent<EzDynamicTargetObject>().starterScript = this;
+                        }
+                        else
+                        {
+                            var p2PDimComp = hit.transform.gameObject.GetComponent<EzDynamicTargetObject>();
+                            p2PDimComp.p2PDimComponentsList.Add(_p2PDim);
+                        }
+
+                        secondDrawStep = false;
+                        _p2PDim.isDone = true;
+                        isCreating = false; // end of drawing of the dimension.
+                    }
+                }
+            }
+
+            yield return null;
+        }
+
+    }
+
+ ```
+ 
+ Inside the IEnumerator there is some steps that passed after each mouse click. by the first click a ``` rayCast ``` will get the first ``` hitPoint ``` and ```hit.transform.gameObject ``` and the first point will, then the script unhides every parts of the dimension by running ``` Funcs.SetActiveAllChilds() ``` function from ```EzDimension``` name space inside ``` EzDimFunctions ``` component. now it's time to define the second point by moving the mouse and hit the second click.
+ After pressing the second click now every frame ``` rayCast``` of ``` Camera.ScreenPointToRay(Mouse.current.position.ReadValue())``` defines the secound point of dimension and ``` UpdateDimension ``` function from added ``` pointToPointDimension ``` component will run every frame to update the dimension based on second point that update each frame depends on mouse position. after the second click ``` isDone ``` boolean inside the added ``` pointToPointDimension ``` will set to true and ``` isCreating ``` boolean inside the ``` EzDimStarter ``` sets to false. that means the end of creation.
+ 
+ this process has the same logic for all of dimensions. ``` EzDimStarter ``` always Create a set of ```gameObjects``` and add the Dimension Component on their parents, it get and set required position from mouse input and update the dimension untill creation process ended. consider that Create and Update dimension are inside the dimension components(pointToPointDimension.cs). create function calls just once because it's at the start void of dimension component.
+ 
+ ```C#
+ 
+     void Start()
+    {
+        CreateDimension(mainParent, arrowPrefab);
+        Funcs.SetActiveAllChilds(this.transform, false);
+    }
+
+    public void CreateDimension(GameObject _mainParent, GameObject _arrowPrefab)
+    {
+        mainLineGO = new GameObject("MainLine");
+        mainLine = mainLineGO.gameObject.AddComponent<LineRenderer>();
+        numberGO = new GameObject("EzDimensionDistanceNumber");
+        numberParent = new GameObject("NumberParent");
+        arrows = new GameObject("Arrows");
+
+        // dynamic objects :
+        dynamicTransforms = new GameObject("dynamicTransforms");
+        objectATransformGO = new GameObject("objectATransformGO");
+        objectBTransformGO = new GameObject("objectBTransformGO");
+        pointATransformGO = new GameObject("pointATransformGO");
+        pointBTransformGO = new GameObject("pointBTransformGO");
+        dynamicTransforms.transform.parent = this.transform;
+        objectATransformGO.transform.parent = dynamicTransforms.transform;
+        objectBTransformGO.transform.parent = dynamicTransforms.transform;
+        pointATransformGO.transform.parent = objectATransformGO.transform;
+        pointBTransformGO.transform.parent = objectBTransformGO.transform;
+
+        // main line :
+        mainLineGO.transform.parent = _mainParent.transform;
+
+        // number :
+        numberGO.transform.parent = numberParent.transform;
+        numberParent.transform.parent = _mainParent.transform;
+        number = numberGO.AddComponent<TextMeshPro>();
+        numberCol = numberGO.gameObject.AddComponent<BoxCollider>();
+
+        // arrows :
+        arrows.transform.parent = _mainParent.transform;
+        arrowAGO = Instantiate(_arrowPrefab, arrows.transform);
+        arrowAGO.name = "Arrow A";
+        arrowBGO = Instantiate(_arrowPrefab, arrows.transform);
+        arrowBGO.name = "Arrow B";
+
+        // turn off shadow
+        // main line
+        mainLine.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+        mainLine.receiveShadows = false;
+        // arrows
+        arrowAGO.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+        arrowAGO.GetComponent<MeshRenderer>().receiveShadows = false;
+        arrowBGO.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+        arrowBGO.GetComponent<MeshRenderer>().receiveShadows = false;
+    }
+    
+```
+
+As mensioned before in addition to ``` CreateDimension() ```  there is an ``` UpdateDimension ``` void inside all of dimensions components. these two voids are in all types of dimensions except area measure. and there is another void named ``` UpdateTextTransform ``` in **pointToPointDimension.cs**, **LinearDimension.cs** and **AlignedDimension.cs**. the **AngleDimension.cs** is quite similar but instead of ``` UpdateTextTransform ``` there is a voide named ``` UpdateTextAndIndicator ``` .the **LinearAreaMeasure.cs** works a bit diffrent and there is no ``` CreateDimension``` and ``` Start() ``` and ``` Update ``` void. instead of those, required gameObjects creating in ``` Awake() ``` void and we have five other voide named ``` UpdatePointsList() ```, ``` UpdateBorderLine() ```, ``` DrawArea() ```, ``` UpdateAreaNumber ``` and ``` UpdateNumberPositionAndRotation ```. 
+
+Another component that contained most of functions is ``` EzDimFunctions.cs ```. all of the functions inside this component are under the **EzDimension** namespace.that means all of other components that using any functions need to indcloud ``` using EzDimension ``` .
+
+There is more specific details in [**Scripting API**](#ScriptingAPI) section.
  
 <br/><br/>
 
@@ -359,3 +544,17 @@ Same as angle dimension and aligned dimension, the area measure also can draw on
   
   
   
+
+
+<br/>
+
+ --- 
+ 
+<br/><br/>
+
+<a name="ScriptingAPI">
+  </a>
+
+### Scripting API :
+
+
