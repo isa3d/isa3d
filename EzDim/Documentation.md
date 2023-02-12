@@ -95,7 +95,8 @@ if you need to use this package inside a **VR** game or app, there is a **Sample
 3. Select the **StarterGO**, then fill the references and set the parameters. If it’s your first run, we recommend to check the sample scene first.
 Consider that the first field should be empty to test the dimensions with mouse input. We’ll explain how to use it in VR in the [**Using EzDimension in VR**](#VRSetting) section.
 
-<img src="https://user-images.githubusercontent.com/88411269/216846440-11e8cad1-d26a-451e-83a6-f01bbbef0c4a.png" width="926">
+
+<img src="https://user-images.githubusercontent.com/88411269/218296772-9659a633-d6a8-4f21-82d6-1022a765fe88.jpg" width="926">
 
 <br/>
 
@@ -664,21 +665,106 @@ the only diffrences are condition of going to the next step and how we get the `
 
 ## Point To Point Dimension :
 
-
-
-
 <br/>
 
+|    Name               |Type        |      Description                                  |
+|:----------------------|:-----------|:--------------------------------------------------|
+|valuesReference        |EzDimStarter|Global parameters reference. |
+|isIndividual           |Bool        |Allow dimension to have local attributes |
+|isDynamic              |Bool        |Make dimension dynamic. If target objects moving, the dimension will update it's length |
+|lineThickness          |Float       |Thickness of the line |
+|arrowHeight            |Float       |Arrow prefab's scale |
+|textSize               |Float       |TextMesh font size |
+|NormalOffset           |Float       |Offset dimension along normal of first hitPoint to avoid Z-Fighting  |
+|textTowardsCameraOffset|Float       |Offset dimension towards camera to avoid masking or intersection with other objects in the scene |
+|textOffset             |Float       |Offset number's textMesh to it's local Y axis. it control the distance between number and line |
+|numberColor            |Color       |Color of number's textMesh |
+|mainColor              |Color       |Color of line material. other material features can control by a costum script |
+|arrowColor             |Color       |Color of arrow material. other material features can control by a costum script |
+|hoveredTint            |Color       |This color multiplies to other colors if we hovered on any dimension when using mouse or VR|
+|selectedTint           |Color       |Color of selected dimensions |
+|hoveredOnSelectedTint  |Color       |Color of selected dimension when we hovered on it when using mouse or VR |
+|mainLineMat            |Material    |Material of line |
+|arrowMat               |Material    |Material of arrows |
+|arrowPrefab            |GameObject  |Prefab contain the arrow object.pivot should set to the center of it's base |
+|cameraTransform        |Transform   |Transform of camera,Normally equal to rendererCamera |
+|rendererCamera         |Camera      |Camera Component of our renderer camera.Normally equal to cameraTransform |
+|mainParent             |GameObject  |Dimension main parent |
+|pointA                 |Vector3     |Initial Position of the first hitPoint |
+|pointB                 |Vector3     |Initial Position of the second hitPoint |
+|secondDrawStep         |Bool        |This bool turns true after first click in creation process and always remain true |
+|isDone                 |Bool        |This bool turns true at the end of creation process |
+|firstPointHitNormal    |Vector3     |Normal of first hitPoint |
+|objectATransformGO     |GameObject  |GameObject at the Position of first hitObject's center |
+|objectBTransformGO     |GameObject  |GameObject at the Position of second hitObject's center |
+|pointATransformGO      |GameObject  |GameObject at the position of first hitPoint |
+|pointBTransformGO      |GameObject  |GameObject at the position of second hitPoint |
+|objectA                |GameObject  |First hitObject |
+|objectB                |GameObject  |Second hitObject |
+|CreateDimension()      |Method      |This void creates the dimension's parts |
+|UpdateDimension()      |Method      |This void updates the dimension's main features |
+|UpdateTextTransform()  |Method      |This void updates the dimension's text transform |    
+
+
+<br/><br/>
 
 
 
 
- ## Linear Dimension :
+
+## Linear Dimension :
  
 <br/>
 
+|Name                   |Type                      |Description                            |
+|-----------------------|--------------------------|---------------------------------------|
+|valuesReference        |EzDimStarter              |Global parameters reference |
+|measurementDirection   |Funcs.MeasurementDirection|Measure the distance on this specific axis |
+|offsetDirection        |Funcs.OffsetDirection     |Offset mainLine in this direction |
+|offsetDistance         |float                     |Distance between mainLine from the first hitPoint |
+|isIndividual           |bool                      |Allow dimension to have local attributes |
+|isDynamic              |bool                      |Make dimension dynamic. If target objects moving, the dimension will update it's length |
+|mainLineThickness      |float                     |Thickness of the mainLine |
+|arrowHeight            |float                     |Arrow prefab's scale |
+|textSize               |float                     |TextMesh font size |
+|NormalOffset           |float                     |Offset dimension along normal of first hitPoint to avoid Z-Fighting |
+|textTowardsCameraOffset|float                     |Offset dimension towards camera to avoid masking or intersection with other objects in the scene |
+|textOffset             |float                     |Offset number's textMesh to it's local Y axis. it control the distance between number and mainLine |
+|secondaryLinesThickness|float                     |Thickness of the sedondary lines |
+|secondaryLinesExtend   |float                     |Length of secondary lines extend |
+|autoTextPosition       |bool                      |change text and arrows position if text's width and arrows height was bigger than distance of measured points |
+|flipTextPosition       |bool                      |flip position when autoTextPosition affected the dimension text and arrows position |
+|numberColor            |Color                     |Color of number's textMesh |
+|mainColor              |Color                     |Color of mainLine material. other material features can control by a costum script |
+|secondaryColor         |Color                     |Color of secondaryLine material. other material features can control by a costum script |
+|arrowColor             |Color                     |Color of arrow material. other material features can control by a costum script |
+|hoveredTint            |Color                     |This color multiplies to other colors if we hovered on any dimension when using mouse or VR |
+|selectedTint           |Color                     |Color of selected dimensions |
+|hoveredOnSelectedTint  |Color                     |Color of selected dimension when we hovered on it when using mouse or VR  |
+|mainLineMat            |Material                  |Material of mainLine |
+|secondaryLinesMat      |Material                  |Material of secondaryLine |
+|arrowMat               |Material                  |Material of arrows |
+|arrowPrefab            |GameObject                |Prefab contain the arrow object.pivot should set to the center of it's base |
+|cameraTransform        |Transform                 |Transform of camera |
+|mainParent             |GameObject                |Dimension main parent |
+|pointA                 |Vector3                   |Initial Position of the first hitPoint |
+|pointB                 |Vector3                   |Initial Position of the second hitPoint |
+|isDone                 |bool                      |This bool turns true at the end of creation process |
+|firstPointHitNormal    |Vector3                   |Normal of first hitPoint |
+|objectATransformGO     |GameObject                |GameObject at the Position of first hitObject's center |
+|objectBTransformGO     |GameObject                |GameObject at the Position of second hitObject's center |
+|pointATransformGO      |GameObject                |GameObject at the position of first hitPoint |
+|pointBTransformGO      |GameObject                |GameObject at the position of second hitPoint |
+|objectA                |GameObject                |First hitObject |
+|objectB                |GameObject                |Second hitObject |
+|CreateDimension()      |Method                    |This void creates the dimension's parts |
+|UpdateDimension()      |Method                    |This void updates the dimension's main features |
+|UpdateTextTransform()  |Method                    |This void updates the dimension's text transform |  
 
-<br/>
+
+
+
+<br/><br/>
 
 
 
@@ -688,10 +774,55 @@ the only diffrences are condition of going to the next step and how we get the `
 
 <br/>
 
+|Name                    |Type                      |Description                            |
+|------------------------|--------------------------|---------------------------------------|
+|valuesReference         |EzDimStarter              |Global parameters reference  |
+|measurementPlane        |Funcs.MeasurementPlane    |Measure the distance on this specific plane |
+|offsetDistance          |float                     |Distance between mainLine from the first hitPoint |
+|reverseDirection        |bool                      |Multiply offset distance to -1 |
+|isIndividual            |bool                      |Allow dimension to have local attributes |
+|isDynamic               |bool                      |Make dimension dynamic. If target objects moving, the dimension will update it's length |
+|mainLineThickness       |float                     |Thickness of the mainLine |
+|arrowHeight             |float                     |Arrow prefab's scale |
+|textSize                |float                     |TextMesh font size |
+|NormalOffset            |float                     |Offset dimension along normal of first hitPoint to avoid Z-Fighting |
+|textTowardsCameraOffset |float                     |Offset dimension towards camera to avoid masking or intersection with other objects in the scene |
+|textOffset              |float                     |Offset number's textMesh to it's local Y axis. it control the distance between number and mainLine |
+|secondaryLinesThickness |float                     |Thickness of the sedondary lines |
+|secondaryLinesExtend    |float                     |Length of secondary lines extend |
+|DirectionPointInFreeMode|Vector3                   |Position of direction point when draw in free mode |
+|autoTextPosition        |bool                      |change text and arrows position if text's width and arrows height was bigger than distance of measured points |
+|flipTextPosition        |bool                      |flip position when autoTextPosition affected the dimension text and arrows position |
+|numberColor             |Color                     |Color of number's textMesh |
+|mainColor               |Color                     |Color of mainLine material. other material features can control by a costum script |
+|secondaryColor          |Color                     |Color of secondaryLine material. other material features can control by a costum script |
+|arrowColor              |Color                     |Color of arrow material. other material features can control by a costum script |
+|hoveredTint             |Color                     |This color multiplies to other colors if we hovered on any dimension when using mouse or VR |
+|selectedTint            |Color                     |Color of selected dimensions |
+|hoveredOnSelectedTint   |Color                     |Color of selected dimension when we hovered on it when using mouse or VR  |
+|mainLineMat             |Material                  |Material of mainLine |
+|secondaryLinesMat       |Material                  |Material of secondaryLine |
+|arrowMat                |Material                  |Material of arrows |
+|arrowPrefab             |GameObject                |Prefab contain the arrow object.pivot should set to the center of it's base |
+|mainParent              |GameObject                |Dimension main parent |
+|cameraTransform         |Transform                 |Transform of camera |
+|firstPointHitNormal     |Vector3                   |Normal of first hitPoint |
+|pointA                  |Vector3                   |Initial Position of the first hitPoint |
+|pointB                  |Vector3                   |Initial Position of the second hitPoint |
+|secondDrawStep          |bool                      |This bool turns true after first click in creation process and always remain true |
+|isDone                  |bool                      |This bool turns true at the end of creation process |
+|objectATransformGO      |GameObject                |GameObject at the Position of first hitObject's center |
+|objectBTransformGO      |GameObject                |GameObject at the Position of second hitObject's center |
+|pointATransformGO       |GameObject                |GameObject at the position of first hitPoint |
+|pointBTransformGO       |GameObject                |GameObject at the position of second hitPoint |
+|objectA                 |GameObject                |First hitObject |
+|objectB                 |GameObject                |Second hitObject |
+|CreateDimension()       |Method                    |This void creates the dimension's parts |
+|UpdateDimension()       |Method                    |This void updates the dimension's main features |
+|UpdateTextTransform()   |Method                    |This void updates the dimension's text transform |  
 
 
-
-<br/>
+<br/><br/>
 
 
 
@@ -702,9 +833,60 @@ the only diffrences are condition of going to the next step and how we get the `
 
 <br/>
 
+|Name                    |Type                      |Description                            |
+|------------------------|--------------------------|---------------------------------------|
+|valuesReference         |EzDimStarter              |Global parameters reference  |
+|angleMeasurementPlane   |Funcs.AngleMeasurmentPlane|Measure the distance on this specific plane |
+|rotateTextBy180         |bool                      |Rotate text on the normal of angle measurement plane by 180 degree|
+|reverseTextPosIfNotFit  |bool                      |Change not fitted text to other side |
+|isIndividual            |bool                      |Allow dimension to have local attributes |
+|isDynamic               |bool                      |Make dimension dynamic. If target objects moving, the dimension will update it's length |
+|linesThickness          |float                     |Thickness of the lines |
+|textSize                |float                     |TextMesh font size |
+|arcScale                |float                     |Scale of the arc plane object |
+|textOffsetFromCenter    |float                     |Offset number's textMesh from center of the angle |
+|NormalOffset            |float                     |Offset dimension along normal of first hitPoint to avoid Z-Fighting |
+|textOffsetIfNotFit      |Vector2                   |Offset to new position of the text in the angleMeasurementPlane if it was not fit |
+|numberColor             |Color                     |Color of number's textMesh |
+|mainColor               |Color                     |Color of the lines. other material features can control by a costum script |
+|arcColor                |Color                     |Color of arc material. other material features can control by a costum script |
+|hoveredTint             |Color                     |This color multiplies to other colors if we hovered on any dimension when using mouse or VR |
+|selectedTint            |Color                     |Color of selected dimensions |
+|hoveredOnSelectedTint   |Color                     |Color of selected dimension when we hovered on it when using mouse or VR  |
+|mainLinesMat            |Material                  |Material of lines |
+|arcMat                  |Material                  |Material of arc plane |
+|pointA                  |Vector3                   |Initial Position of the first hitPoint |
+|pointB                  |Vector3                   |Initial Position of the second hitPoint |
+|pointC                  |Vector3                   |Initial Position of the third hitPoint |
+|mainParent              |GameObject                |Dimension main parent |
+|cameraTransform         |Transform                 |Transform of camera |
+|trueOnFirstStep         |Bool                      |This bool turns true after first click in creation process and always remain true |
+|trueOnSecoundStep       |Bool                      |This bool turns true after second click in creation process and always remain true |
+|isDone                  |Bool                      |This bool turns true at the end of creation process |
+|lineAGO                 |GameObject                |Line A ``` gameObject ```|
+|lineBGO                 |GameObject                |Line B ``` gameObject ```|
+|pointBProxy             |Vector3                   |Projected pointB to the angleMeasurementPlane with the same local height of pointA |
+|pointCProxy             |Vector3                   |Projected pointC to the angleMeasurementPlane with the same local height of pointA |
+|arcParentGO             |GameObject                |Parent of the arc plane ``` gameObject ``` |
+|plane                   |Plane                     |Intersected plane by pointA, pointB and pointC |
+|numberGO                |GameObject                |Number ``` gameObject ``` |
+|objectATransformGO      |GameObject                |GameObject at the Position of first hitObject's center |
+|objectBTransformGO      |GameObject                |GameObject at the Position of second hitObject's center |
+|objectCTransformGO      |GameObject                |GameObject at the Position of third hitObject's center |
+|pointATransformGO       |GameObject                |GameObject at the position of first hitPoint |
+|pointBTransformGO       |GameObject                |GameObject at the position of second hitPoint |
+|pointBTransformGO       |GameObject                |GameObject at the position of third hitPoint |
+|objectA                 |GameObject                |First hitObject |
+|objectB                 |GameObject                |Second hitObject |
+|objectC                 |GameObject                |third hitObject |
+|CreateDimension()       |Method                    |This void creates the dimension's parts |
+|UpdateDimension()       |Method                    |This void updates the dimension's main features |
+|UpdateTextAndIndicator()|Method                    |This void updates the dimension's text transform and ``` Angle``` parameter of arc material|  
 
 
-<br/>
+
+
+<br/><br/>
 
 
 
@@ -715,6 +897,254 @@ the only diffrences are condition of going to the next step and how we get the `
 
 <br/>
 
+|Name                    |Type                      |Description                            |
+|------------------------|--------------------------|---------------------------------------|
+|valuesReference         |EzDimStarter              |Global parameters reference  |
+|cameraBaseNumberInXYDir |bool                      |Update text rotation based on camera position |
+|rotateText180LocalY     |bool                      |flip text in local Y |
+|rotateText180LocalZ     |bool                      |flip text in local Z  |
+|rotateText180LocalX     |bool                      |flip text in local X  |
+|isIndividual            |bool                      |Allow dimension to have local attributes |
+|textSize                |float                     |TextMesh font size |
+|localYOffset            |float                     |Push the dimension in local Y direction to avoid Z-fighting with the underlying surface |
+|textLocalYOffset        |float                     |Push the text in it's local Y direction to avoid Z-fighting with the area highlighting plane |
+|borderLocalYOffset      |float                     |Push the border in local Y direction to avoid Z-fighting with the area highlighting plane |
+|borderThickness         |float                     |Thickness of the border line |
+|positionOffset          |Vector2                   |2d offset of the number in the surface |
+|enableBorderLine        |bool                      |Show line around measured area |
+|numberColor             |Color                     |Color of number's textMesh |
+|borderColor             |Color                     |Color of border material. other material features can control by a costum script |
+|surfaceColor            |Color                     |Color of surface material. other material features can control by a costum script |
+|hoveredTint             |Color                     |This color multiplies to other colors if we hovered on any dimension when using mouse or VR |
+|selectedTint            |Color                     |Color of selected dimensions |
+|hoveredOnSelectedTint   |Color                     |Color of selected dimension when we hovered on it when using mouse or VR  |
+|surfaceMaterial         |Material                  |Material of area highlighting plane |
+|BorderMaterial          |Material                  |Material of area border |
+|handlesParent           |GameObject                |Parent ``` gameObject ``` of area corners object
+|cameraTransform         |Transform                 |Transform of camera |
+|points                  |List\<Vector2>            |List of area corners in a 2d plane|
+|handlesList             |List\<GameObject>         |List of area corners object |
+|area                    |float                     |Calculated area stores in this float |
+|borderLineGO            |GameObject                |Border line ``` gameObject ``` |
+|borderLine              |LineRenderer              | ``` LineRenderer ``` component to draw borderLine|
+|meshCenter              |Vector3                   |Center of the measured area |
+|allowDrawSurface        |bool                      |Allow to update surface when corne's handles position are changing |
+|hitNormal               |Vector3                   |Get the normal of the surface to avoid flip normal using EzdimFunctions.InternalFunctions.FlipNormal() |
+|measurementPlane        |Funcs.MeasurementPlane    |Measure the area on this specific plane |
+|isDone                  |bool                      |This bool turns true at the end of creation process |
+|drawMode                |bool                      |This bool turns true at the end of creation process |
+|updatePointsList()      |Method	                |Get the ``` List<Vector2> ``` of area corners position on 2d plane and rearrange them based on measurement plane |
+|UpdateBorderLine()      |Method                    |Update border line based on measurement plane and points position |
+|DrawArea()              |Method                    |Draw, update and triangulate the highlighting plane mesh |
+|UpdateNumberPosAndRot() |Method                    |Update area number position and rotation |
+
+
 
   
+<br/><br/>
+
+
+
+
+
+
+## EzDimFunctions :
+
 <br/>
+
+|Name                    |Type                      |Description                            |
+|------------------------|--------------------------|---------------------------------------|
+|Funcs                   |Class                     |Contain the main functions |
+|InternalFunctions       |Class                     |Contain the side functions that are not using frequently |
+|MeasurementDirection    |enum                      |Main axis {X, Y, Z} |
+|OffsetDirection         |enum                      |Main axis {X, Y, Z} |
+|MeasurementPlane        |enum                      |Main planes  { XZ, XY, ZY, Free } |
+|AngleMeasurmentPlane    |enum                      |Main planes  { XZ, XY, ZY, Free } |
+|MeasurmentType          |enum                      |Main measurement types { Length, Area, Volume } |
+|UpdateArea              |static void               |Update area measure |
+|UpdateAngle             |static void               |Update angle dimension |
+|UpdateLength            |static void               |Update the length of pointToPoint Dimension. using this when the start or end point position has changed |
+|UpdateLength            |static void               |Update the length of Linear Dimension |
+|UpdateLength            |static void               |Update the length of Aligned Dimension |
+|UpdateAll               |static void               |Update all dimensions main features |
+|UpdateValues            |static void               |Update all dimensions main features (depricated) |
+|UpdateNumbersRotation   |static void               |Update all numbers rotation |
+|SelectDimension         |static void               |Add hitObject to selection List |
+|HighlightSelectedDims   |static void               |Highlight available dimensions in selection list and de-emphasize the deselected dimensions |
+|IsHoveredOnDimension    |static void               |Manage highlighting and de-emphasizeing hovered dimensions |
+|SetActiveAllChilds      |static void               |Activate all children of given ``` gameObject ``` |
+|HideSelectedDimensions  |static void               |Hide selected Dimension |
+|UnhideAllDimensions     |static void               |Unhide all dimensions inside a given starter script and dimension list |
+|DeleteDimensions        |static void               |Delete selected dimensions |
+|Units                   |enum                      |Measurement units { Millimetre, centimeter, meter, inch, foot, yard, custom } |
+|numberOfDecimal         |enum                      |Number of decimals { none, one, two, three, four, five, six } |
+|LengthUnitCalculator    |static float              |Return the multiplier of diffrent units for length |
+|AreaUnitCalculator      |static float              |Returns the multiplier of diffrent units for area |
+|DecimalCalculator       |static string             |Returns the decimal number for diffrent decimal numbers |
+|GetUnitTextShortForm    |static string             |Returns the short form of the units text |
+|AngleBisectorPoint      |static Vector3            |Calculate the bisector of three points |
+|HighlightColor          |static Color              |Highlight a color with given percentage |
+|Remap                   |static float              |Remap a value from one range to another range |
+|FlipNormal              |static bool               |Custom function to calculate area surface normal to avoid reversed normal |
+|TriangulatePoints       |static mesh               |Return triangulate mesh from given vector2 array of points |
+
+
+<br/><br/>
+
+
+
+  
+## EzDynamicTargetObject
+
+<br/>
+
+This component will add to all target objects. if any transform change happends and dimension's ``` isDynamic ``` option was true, this component call ``` updateLength() ``` function for the related dimension. 
+
+<br/>
+
+|Name                    |Type                        |Description                            |
+|------------------------|----------------------------|---------------------------------------|
+|starterScript           |EzDimStarter                |EzDimStarter component that created dimension on this target object |
+|areaMeasureRoot         |LinearAreaMeasure           |``` LinearAreaMeasure ``` component (if exist) |
+|p2PDimComponentsList    |List\<PointToPointDimension>|List of ```PointToPointDimension ``` components (if exist) |
+|linDimComponentsList    |List\<LinearDimension>      |List of ```LinearDimension ``` components (if exist) |
+|alignDimComponentsList  |List\<AlignedDimension>     |List of ```AlignedDimension ``` components (if exist) |
+|angleDimComponentsList  |List\<AngleDimension>       |List of ```AngleDimension ``` components (if exist) |
+
+
+
+
+
+<br/><br/>
+
+
+
+
+
+## EzDimStarter :
+
+<br/>
+
+|Name                         |Type                         |Description                            |
+|-----------------------------|-----------------------------|---------------------------------------|
+|drawInVrComp                 |Component                    |VR Component ( Null = Use Mouse Input ) |
+|unit                         |InternalFunctions.Units      |Unit’s Enum { Millimetre, centimeter, meter, inch, foot, yard, custom } |
+|customUnitMultiplier         |float                        |If Unit = Custom, this number will multipliy to default unit |
+|customUnitName               |string                       |If Unit = Custom, Name of custom unit |
+|showUnitAfterNumber          |bool                         |Show short form of the unit name after dimension’s number in runtime |
+|numberOfDecimal              |internalFuncs.numberOfDecimal|Decimal Enum { none, one, two, three, four, five, six } |
+|cameraTransform              |Transform                    |Camera based texts using this transform |
+|rendererCamera               |Camera                       |RayCasts using this camera (normally its same as camera transform) |
+|mainLineMaterial             |Material                     |Material of the “mainLine” (line between two arrows in dimensions) |
+|secondaryLinesMaterial       |Material                     |Material of secondary lines in “Linear” and “Aligned” dimensions |
+|arrowMaterial                |Material                     |Material of Arrows in “PointToPoint”, “Linear” and “Aligned” dimensions |
+|arcMaterial                  |Material                     |Material of indicator arc of “Angle” dimension |
+|areaSurfaceMaterial          |Material                     |Material of “Area” measure’s surface |
+|areaBorderMaterial           |Material                     |Material of “Area” measure’s border |
+|arrowPrefab                  |GameObject                   |Arrow Prefab for “PointToPoint”, “Linear” & “Aligned” dimensions |
+|areaHandlesPrefab            |GameObject                   |It will attach to every corners of “Area” measure |
+|alignedDimFreeModeDirPointer |GameObject                   |Direction pointer object appears when creating free “aligned” dimension |
+|alignedDimFreeModePlanePrefab|GameObject                   |Direction plane object appears when creating free “aligned” dimension |
+|planePrefabScaleMultiplier   |float                        |Scale direction plane to mouse position multiplier. Zero = turnOf |
+|areaHandlesScale             |float                        |Scale of ``` areaHandlesPrefab ``` |
+|pointerScale                 |float                        |Scale of ``` alignedDimFreeModeDirPointer ``` |
+|isDynamic                    |bool                         |If true, start and end of dimension will follow the “hit point” transform |
+|linesThickness               |float                        |Thickness of the “mainLine”(line between two arrows) |
+|textSize                     |float                        |The size of number’s text (it’s based on “textMeshPro” font size) |
+|textOffset                   |float                        |Offset between “main line” and number’s text |
+|arrowHeight                  |float                        |Coefficient of arrow size. final size depends on “arrowPrefab” scale |
+|measurementDirection         |Funcs.MeasurementDirection   |Direction of “Linear” dimension (multiply direction to “offsetDistance”) |
+|offsetDirection              |Funcs.OffsetDirection        |Direction of offset in the “Linear” dimension |
+|measurementPlane             |Funcs.MeasurementPlane       |Measurement plane for “Aligned” dimensions - { XZ, XY, ZY, Free } |
+|reverseDirection             |bool                         |Flip “Aligned” dimensions in cross vector of the measurement plane |
+|offsetDistance               |float                        |Length of “secondary lines” |
+|secondaryLinesThickness      |float                        |Thickness of “secondary lines” |
+|secondaryLinesExtend         |float                        |Length of “extends” in secondary lines |
+|autoTextPosition             |bool                         |Change number’s position if distance was too short and number can’t fit |
+|flipTextPosition             |bool                         |If “AutoTextPosition” was true, mirror text position |
+|angleMeasurmentPlane         |Funcs.AngleMeasurmentPlane   |Measurement plane of “Angle” dimension - { XZ, XY, ZY, Free } |
+|arcScale                     |float                        |Scale of the plane that carries the dimension arc |
+|angleDimTextOffsetFromCenter |float                        |Distance of number from the center of the angle dimension |
+|angleDimHitNormalOffset      |float                        |Offset to normal direction of the first hit point to avoid ZFighting |
+|textOffsetWhenNotFit         |Vector2                      |When angle is too short, this is offset of new position |
+|areaMeasurementPlane         |Funcs.MeasurementPlane       |Measurement plane of “Area” measure - { XZ, XY, ZY, Free } |
+|enableAreaBorderLine         |bool                         |Show border line |
+|areaLocalYOffset             |float                        |Offset in local Y direction to avoid Z-fighting |
+|areaTextLocalYOffset         |float                        |Space between number’s text and area surface |
+|areaBorderLocalYOffset       |float                        |Space between border and area surface |
+|areaBorderLineThickness      |float                        |Thickness of the border line mesh |
+|areaNumberPositionOffset     |Vector2                      |2d offset of number position |
+|numberColor                  |Color                        |Color of “textMeshPro” that generates the number |
+|mainColor                    |Color                        |Color of line between arrows in “PointToPoint”, “Linear” & “Aligned” dims  |
+|secondaryColor               |Color                        |Color of guiding lines of “Linear” & “Aligned” dimension |
+|arrowColor                   |Color                        |Color of arrows in “PointToPoint”, “Linear” & “Aligned”  dimensions  |
+|arcColor                     |Color                        |Color of indicator arc of “Angle” dimension |
+|areaBorderColor              |Color                        |Color of border of “Area” measure |
+|areaSurfaceColor             |Color                        |Color of surface of “Area” measure |
+|hoveredTint                  |Color                        |Lerp this color to colors of “hovered” dimension |
+|selectedTint                 |Color                        |Lerp this color to colors of “selected” dimensions |
+|hoveredOnSelectedTint        |Color                        |Lerp this color to colors of “hovered dimensions” if it was selected |
+|hitNormalOffset              |float                        |Offset to normal direction of first hit point to avoid ZFighting |
+|textTowardsCameraOffset      |float                        |Offset the number towards the camera to avoid intersection |
+|onSelectionChanged           |UnityEvent<List<GameObject>> |Events added here will trigger when selection changes (Mouse & VR) |
+|onHovered                    |UnityEvent<GameObject>       |Events added here will trigger when hovers on a dimension (Mouse & VR) |
+|pointA                       |Vector3                      |Initial Position of the first hitPoint |
+|pointB                       |Vector3                      |Initial Position of the second hitPoin |
+|isCreating                   |bool                         |This bool turns true while creation process otherwise is false |
+|DimensionsList               |List\<GameObject>            |List of dimensions created from this ``` EzDimStarter ``` component |
+|SelectionList                |List\<GameObject>            |List of selected dimensions that created from this ``` EzDimStarter ``` component |
+|oldHoveredGo                 |GameObject                   |List hovered dimension |
+|hit                          |RaycastHit                   |raycast hit (feed by mouse or VR) |
+|isOldSelectionListEmpty      |bool                         |This bool returns true if selection list was empty |
+|planePrefab                  |GameObject                   |Plane Prefab that shows when creating aligned dimension in free mode |
+|createDimensionCort          |Coroutine                    |Coroutine for creation process |
+|CreatePointToPointDimension()|IEnumerator                  |Using this part of code while creating ```PointToPointDimension ``` . |
+|CreateLinearDimension()      |IEnumerator                  |Using this part of code while creating ```LinearDimension ``` . |
+|CreateAlignedDimension()     |IEnumerator                  |Using this part of code while creating ```AlignedDimension ``` . |
+|CreateAngleDimension()       |IEnumerator                  |Using this part of code while creating ```AngleDimension ``` . |
+|CreateAreaMeasure()          |IEnumerator                  |Using this part of code while creating ```AreaMeasure  ``` . |
+|EzPointToPointDimension()    |Method                       |Call this void to create ```PointToPointDimension ``` when using mouse input |
+|EzLinearDimension()          |Method                       |Call this void to create ```LinearDimension ``` when using mouse input |
+|EzAlignedDimension()         |Method                       |Call this void to create ```AlignedDimension ``` when using mouse input |
+|EzAngledDimension()          |Method                       |Call this void to create ```AngleDimension ``` when using mouse input |
+|EzAreaMeasure()              |Method                       |Call this void to create ```AreaMeasure ``` when using mouse input |
+|HideSelectedDimensions()     |Method                       |Call this void to hide selected dimensions when using mouse or VR input |
+|UnhideAll()                  |Method                       |Call this void to unhide all dimensions when using mouse or VR input |
+|DeleteSelectedDimensions()   |Method                       |Call this void to delete selected dimensions when using mouse or VR input  |
+|UpdateAll()                  |Method                       |Call this void to update all dimensions when using mouse or VR input |
+
+
+
+  
+<br/><br/>
+
+
+
+
+
+
+## DrawInVR :
+
+<br/>
+
+|Name                          |Type                         |Description                            |
+|------------------------------|-----------------------------|---------------------------------------|
+|hoveredHit                    |RaycastHit                   |``` RaycastHit ``` from ``` XRRayInteractor ```. it should send to EzDimStarter.hit |
+|rayInteractor                 |XRRayInteractor              |Feed this input field by ``` XRRayInteractor ``` from one of VR controller |
+|primaryButtonPress            |PrimaryButtonEvent           |Event for primary button press |
+|CreatePointToPointDimension() |IEnumerator                  |Using this part of code while creating ```PointToPointDimension ``` . |
+|CreateLinearDimension()       |IEnumerator                  |Using this part of code while creating ```LinearDimension ``` . |
+|CreateAlignedDimension()      |IEnumerator                  |Using this part of code while creating ```AlignedDimension ``` . |
+|CreateAngleDimension()        |IEnumerator                  |Using this part of code while creating ```AngleDimension ``` . |
+|CreateAreaMeasure()           |IEnumerator                  |Using this part of code while creating ```AreaMeasure  ``` . |
+|VR_EzPointToPointDimension()  |Method                       |Call this void to create ```PointToPointDimension ``` when using VR input |
+|VR_EzLinearDimension()        |Method                       |Call this void to create ```LinearDimension ``` when using VR input |
+|VR_EzAlignedDimension()       |Method                       |Call this void to create ```AlignedDimension ``` when using VR input |
+|VR_EzAngledDimension()        |Method                       |Call this void to create ```AngleDimension ``` when using VR input |
+|VR_EzAreaMeasure()            |Method                       |Call this void to create ```AreaMeasure ``` when using VR input |
+|VR_HighlightHoveredDimension()|Method                       |This void will call when using VR from ``` EzDimStarter ``` using ``` gameObject.SendMessage() ``` |
+|VR_SelectDimension()          |Method                       |This void will call when using VR from ``` EzDimStarter ``` using ``` gameObject.SendMessage() ```  |
+
+
+  
+<br/><br/>
