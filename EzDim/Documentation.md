@@ -9,34 +9,33 @@
 
 ![image](https://user-images.githubusercontent.com/88411269/216851590-bd33ad4a-d12c-492e-b990-029453dee0c6.png) 
 
-Using **EzDimension** is quite easy. it works with **Mouse** or **VR** input.
- We have 5 types of measurement :
+Using EzDimension is quite easy. It works with both mouse and VR inputs. There are five types of measurements available :
  
  
 |Types         |                       What To Measure          |MainLine          |Guide 	          | Arrows           | Number           |Border            |Arc               |Surface           |
 |--------------|------------------------------------------------|:----------------:|:----------------:|:----------------:|:----------------:|:----------------:|:----------------:|:----------------:|
-|Point To Point| Direct distance of two points                  |:heavy_check_mark:|                  |:heavy_check_mark:|:heavy_check_mark:|                  |                  |                  |
-|Linear        | Distance of two points along XYZ Axis          |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  |                  |                  |
-|Aligned       | Distance of two points along their orientation |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  |                  |                  |
-|Angle         | The angle between three points                 |:heavy_check_mark:|                  |                  |:heavy_check_mark:|                  |:heavy_check_mark:|                  |
-|Area          | The area between selected points               |:heavy_check_mark:|                  |                  |:heavy_check_mark:|:heavy_check_mark:|                  |:heavy_check_mark:|
+|Point To Point| The direct distance between two points.                  |:heavy_check_mark:|                  |:heavy_check_mark:|:heavy_check_mark:|                  |                  |                  |
+|Linear        | The distance between two points along the X, Y, and Z axes.          |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  |                  |                  |
+|Aligned       | The distance between two points along their orientation. |:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|                  |                  |                  |
+|Angle         | The angle between three points.                |:heavy_check_mark:|                  |                  |:heavy_check_mark:|                  |:heavy_check_mark:|                  |
+|Area          | The area between selected points.               |:heavy_check_mark:|                  |                  |:heavy_check_mark:|:heavy_check_mark:|                  |:heavy_check_mark:|
 
 <br /><br />
 
  ## key Features :
-* Compatible by Mobile Devices, AR & VR
-* support dynamic transforms. if you move, rotate or scale the target objects in runtime, the dimension start and end will update correctly.
-* Support Units (Milimeters, Centimeters, Meters, Inch, Foot, Yard)
-* Support Custom Unit if you need a unit that was not in the units list.
-* Update TextPosition manually and automatic based on camera position .
-* Having control on the materials of each part.
-* Having control on color of each part.
-* Highlight dimension when mouse or XR ray interactor hovers on the text any dimension.
-* selection system.
-* full control of texts size, lines thickness, arrows size , etc... .
-* change the parameters for all dimensions or disconnect some of them to have individual properties.
-* Trigger event when selection changed and when mouse hovered on a dimension.
-* diffrent types of offset to avoid Zfighting and text coverage behind the scene objects.
+* Compatible with Mobile Devices, AR, and VR.
+* Supports dynamic transforms. If you move, rotate, or scale the target objects during runtime, the dimension start and end will update correctly.
+* Supports units of millimeters, centimeters, meters, inches, feet, and yards.
+* Supports custom units if needed.
+* Updates text position both manually and automatically based on the camera position.
+* Offers control over the materials of each part.
+* Offers control over the color of each part.
+* Highlights dimensions when the mouse or XR ray interactor hovers over the dimension text.
+* Has a selection system.
+* Offers full control over text size, line thickness, arrow size, and more.
+* Allows for adjusting parameters for all dimensions or disconnecting some to have individual properties.
+* Triggers an event when selection changes and when the mouse hovers over a dimension.
+* Offers different types of offsets to avoid Z-fighting and text coverage behind scene objects.
 
 ---
 
@@ -44,9 +43,13 @@ Using **EzDimension** is quite easy. it works with **Mouse** or **VR** input.
 
 # Dependencies :
 
-## Input System :
+## Input System:
+To set up the **Input System**, follow these steps:
+1. Install the Input System from the package manager. 
+2. Create an **Event System** and select it in the hierarchy. 
+3. In the inspector, click the button labeled "Replace with InputSystemUIInputModule". 
 
-After install **input System** from package manager create an **Event System** and select it in the hierarchy, then in the inspector click on the **Replace with InputSystemUIInputModule** button. You can read the [**input system documentation**](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.5/manual/index.html).
+For further information, refer to the [**Input System documentation**](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.5/manual/index.html).
 
 
 <img src="https://user-images.githubusercontent.com/88411269/216845364-046d6af5-094a-490e-9da4-8f453f10e764.png" width="500">
@@ -54,14 +57,17 @@ After install **input System** from package manager create an **Event System** a
 
 <br/>
 
-## Text Mesh Pro :
-This package uses **TextMeshPro** too. Install it from package manager if you do not have it already.read the [**TextMeshPro documentation**](https://docs.unity3d.com/Manual/com.unity.textmeshpro.html).
+## TextMeshPro :
+This package requires **TextMeshPro** to be installed. If you do not already have it, please install it from the package manager. For more information, refer to the [**TextMeshPro documentation**](https://docs.unity3d.com/Manual/com.unity.textmeshpro.html).
 
 <br/>
 
-## XR Interaction Toolkit (Optional) :
+## XR Interaction Toolkit (Optional):
+This package provides the option to use the toolkit in virtual reality (VR) applications. If you plan to use this package in a VR environment, you must have the **XR Interaction Toolkit 2.2.0** installed. 
 
-if you need to use this package inside a **VR** game or app, there is a **Sample VR Script** that you can download it from package manager in the sample section. before downloading it you need to install **XR Interaction Toolkit 2.2.0** to use this sample. also you can write your own **VR Script** sample. We recommend to check the sample script because the **VR Script** should work with the starter Script properly. for more details about using this package for **HMD** check the [**Using EzDimension in VR**](#VRSetting).
+A sample VR script is available for download in the sample section of the package manager. This script serves as a starting point for integrating the package into a VR environment, and we highly recommend reviewing the script to ensure proper compatibility with the starter script. 
+
+For further information on using the package with head-mounted displays (HMDs), please refer to the section on [**Using EzDimension in VR**](#VRSetting) in this documentation.
 
 ---
 
@@ -73,38 +79,35 @@ if you need to use this package inside a **VR** game or app, there is a **Sample
   
 # Quick Start :
 
-1. Create an empty game object and rename it to **StarterGO** and add **EzDimStarter** component on it:
+1. Create an empty game object and rename it to **StarterGO**. Then, add the `EzDimStarter` component to it.
 
-2. Create nine **UI buttons** and drag the **StarterGO** script inside the button. Then select these voids for each button :
+2. Create nine **UI buttons** and drag the `StarterGO` object into each button. Assign the following voids to each button, respectively:
 
-* EzPointToPointDimension()
-* EzLinearDimension()
-* EzAlignedDimension()
-* EzAngledDimension()
-* EzAreaMeasure()
-* HideSelectedDimensions()
-* UnhideAll()
-* DeleteSelectedDimensions()
-* UpdateAll()
+- `EzPointToPointDimension()`
+- `EzLinearDimension()`
+- `EzAlignedDimension()`
+- `EzAngledDimension()`
+- `EzAreaMeasure()`
+- `HideSelectedDimensions()`
+- `UnhideAll()`
+- `DeleteSelectedDimensions()`
+- `UpdateAll()`
 
+![Button Configuration](https://user-images.githubusercontent.com/88411269/216846372-5bf205e8-d45c-462c-90d9-feb1da2fc6d5.png)
 
-<img src="https://user-images.githubusercontent.com/88411269/216846372-5bf205e8-d45c-462c-90d9-feb1da2fc6d5.png" width="500">
+<br/><br/>
 
-<br/>
+3. Select the `StarterGO` object and fill in the required references and set the necessary parameters. If this is your first time using the package, it is recommended to review the sample scene before proceeding. Note that the first field should be left empty for testing the dimensions with mouse input. The procedure for using it in VR is explained in the [Using EzDimension in VR](#VRSetting) section.
 
-3. Select the **StarterGO**, then fill the references and set the parameters. If it’s your first run, we recommend to check the sample scene first.
-Consider that the first field should be empty to test the dimensions with mouse input. We’ll explain how to use it in VR in the [**Using EzDimension in VR**](#VRSetting) section.
+![Reference Configuration](https://user-images.githubusercontent.com/88411269/218296772-9659a633-d6a8-4f21-82d6-1022a765fe88.jpg)
 
+<br/><br/>
 
-<img src="https://user-images.githubusercontent.com/88411269/218296772-9659a633-d6a8-4f21-82d6-1022a765fe88.jpg" width="926">
+4. After filling in the references and setting the parameters, create a ground object and two additional objects with collider components. Then, you can create your first dimension by clicking the button that is connected to the `EzPointToPointDimension()` void.
 
-<br/>
+![First Dimension Creation](https://user-images.githubusercontent.com/88411269/216851375-caaf83e1-1bf9-4e11-a058-665a60579b6b.gif)
 
-4 . When you fill the references and set the parameters, create a ground object and another two objects, check them having “Collider” component. you can create your first dimension by click on the button that you connected to “EzPointToPointDimension()” void.
-
-<img src="https://user-images.githubusercontent.com/88411269/216851375-caaf83e1-1bf9-4e11-a058-665a60579b6b.gif" width="500">
-
-congratulations, you made your first dimension!
+Congratulations, you have successfully created your first dimension!
 
 ---
 
@@ -115,8 +118,7 @@ congratulations, you made your first dimension!
 
 <img src="https://user-images.githubusercontent.com/88411269/216851756-74f0d795-6e22-4bc3-9b59-5e47a110b82a.png" width="500">
 
-For each dimensions we have some general settings in the starter script. if you take a look at the inspector when **StarterGO** is selected, you can find the **General** section.
-these settings are share between more than one dimension. For example **Text Size** is share between all of them and arrow radius is share between **Point To Point**, **Linear** and **Aligned** dimension. You can read about the details of each option in the [**General References**](#GeneralReferences) section.
+Each dimension has general settings in the Starter script, which can be accessed in the inspector when `StarterGO` is selected. In the `General` section, you will find options that are shared between multiple dimensions. For example, the `Text Size` setting is shared between all dimensions, while the arrow radius is shared between `Point To Point`, `Linear`, and `Aligned` dimensions. For more information on each option, see the [General References](#GeneralReferences) section.
 
 <br/>
 
@@ -124,13 +126,11 @@ these settings are share between more than one dimension. For example **Text Siz
 
 <img src="https://user-images.githubusercontent.com/88411269/216856990-c7379445-a363-4cf6-a997-085c27e341cb.png" width="500">
 
-the color section is shared between the dimensions too. . If you change the “Number Color”, It changes all of the dimensions number’s color except which dimensions that mark as individual. We’ll explain individuality of each dimension along the way. Last three colors will multiply with the dimension’s color when they are selected or when we hover mouse or VR-Interactor on number of an object. It works with a Lerp function line this : 
-
-
+The color section is also shared between the dimensions in the ``` EzDimStarter ``` component. If you change the "Number Color", it changes the color of all the dimension numbers, except for those dimensions that are marked as individual. The individuality of each dimension will be explained along the way. The last three colors will multiply with the dimension's color when they are selected or when the mouse or VR-Interactor hovers over the number of an object. This is achieved using the following Lerp function:
 
 
     if (mouse hovered on a text of a dimension)
-          Color = Color.Lerp( numberColor, hoveredTint, 0.5f );
+         Color = Color.Lerp( numberColor, hoveredTint, 0.5f );
 
 ---
 
@@ -147,9 +147,11 @@ the color section is shared between the dimensions too. . If you change the “N
 
 ## Point To Point Dimension :
 
-Point to point dimension is simple type of the measurement. It takes two Vector3 position and calculate the direct distance between these two points.
-When run the void “EzPointToPointDimension()” by click on the button in your UI, The “EzPointToPointDimension” gameobject will create under the StarterGO but all of its child are invisible till you hit the first click on an object that has a collider. After that while you didn’t hit the second click, the dimension it measure the first click and the current mouse position (if mouse hovers on an object with collider). after hit the second click your dimension will add to the “dimensionsList” in the starter script and its done.
-If you select the “EzPointToPointDimension” gameobject under the “StarterGO” and take a look at the inspector you can see that the dimension copied the parameters from starter script inside itself.
+Point to point dimension is a simple type of measurement. It calculates the direct distance between two Vector3 positions.
+
+When you run the `EzPointToPointDimension()` void by clicking on the button in your UI, the EzPointToPointDimension `gameoOject` will be created under the StarterGO, but all of its child objects will be invisible until you first click on an object with a collider. From that point, while you haven't yet clicked a second time, the dimension will measure the first click and the current mouse position (if the mouse is hovering over an object with a collider). After you hit the second click, your dimension will be added to the `dimensionsList` in the starter script, and it's done.
+
+If you select the EzPointToPointDimension `gameObject` under the StarterGO and examine the inspector, you will see that the dimension has copied the parameters from the starter script into itself.
 
 
 <br/>
