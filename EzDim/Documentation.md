@@ -98,6 +98,8 @@ Our unity plugin is a comprehensive solution for creating dimensions in your pro
 
 [<img src="https://user-images.githubusercontent.com/88411269/219645282-c0306215-ca1e-4197-96c7-8379672f75b4.png" alt="image with tooltip" width="40" height="40">](#Introduction "Go to introduction")
 [<img src="https://user-images.githubusercontent.com/88411269/219619899-da8e937c-7bae-48a0-8992-acfacd1df29f.png" alt="image with tooltip" width="40" height="40">](#ListOfContents "Go to list of contents")
+[<img src="https://user-images.githubusercontent.com/88411269/219728907-9b61862e-e35b-4d91-8d96-62dbc890d7f8.png" alt="image with tooltip" width="40" height="40">](#RoadMap "Go to Road Map")
+[<img src="https://user-images.githubusercontent.com/88411269/219729075-a7d27fc6-9c34-42be-adc3-f610c0d77f40.png" alt="image with tooltip" width="40" height="40">](#Limits "Go to Known Limitations of Easy Dimension")
 [<img src="https://user-images.githubusercontent.com/88411269/219647914-f014ed12-2e5c-425d-b604-0da18453ef06.png" alt="image with tooltip" width="40" height="40">](#Dependencies "Go to dependencies")
 [<img src="https://user-images.githubusercontent.com/88411269/219648415-9919a52a-e5eb-45bd-97ee-581fca6f0cee.png" alt="image with tooltip" width="40" height="40">](#QuickStart "Go to quick start")
 [<img src="https://user-images.githubusercontent.com/88411269/219654869-d21de237-5422-4ff4-93dc-ff2e0d1d417c.png" alt="image with tooltip" width="40" height="40">](#SettingsNotes "Go to Settings Notes")
@@ -199,6 +201,8 @@ Our unity plugin is a comprehensive solution for creating dimensions in your pro
 
 [<img src="https://user-images.githubusercontent.com/88411269/219645282-c0306215-ca1e-4197-96c7-8379672f75b4.png" alt="image with tooltip" width="40" height="40">](#Introduction "Go to introduction")
 [<img src="https://user-images.githubusercontent.com/88411269/219619899-da8e937c-7bae-48a0-8992-acfacd1df29f.png" alt="image with tooltip" width="40" height="40">](#ListOfContents "Go to list of contents")
+[<img src="https://user-images.githubusercontent.com/88411269/219728907-9b61862e-e35b-4d91-8d96-62dbc890d7f8.png" alt="image with tooltip" width="40" height="40">](#RoadMap "Go to Road Map")
+[<img src="https://user-images.githubusercontent.com/88411269/219729075-a7d27fc6-9c34-42be-adc3-f610c0d77f40.png" alt="image with tooltip" width="40" height="40">](#Limits "Go to Known Limitations of Easy Dimension")
 [<img src="https://user-images.githubusercontent.com/88411269/219647914-f014ed12-2e5c-425d-b604-0da18453ef06.png" alt="image with tooltip" width="40" height="40">](#Dependencies "Go to dependencies")
 [<img src="https://user-images.githubusercontent.com/88411269/219648415-9919a52a-e5eb-45bd-97ee-581fca6f0cee.png" alt="image with tooltip" width="40" height="40">](#QuickStart "Go to quick start")
 [<img src="https://user-images.githubusercontent.com/88411269/219654869-d21de237-5422-4ff4-93dc-ff2e0d1d417c.png" alt="image with tooltip" width="40" height="40">](#SettingsNotes "Go to Settings Notes")
@@ -217,13 +221,85 @@ Our unity plugin is a comprehensive solution for creating dimensions in your pro
   </a>
 
 <p>
-  <img src="https://user-images.githubusercontent.com/88411269/219647914-f014ed12-2e5c-425d-b604-0da18453ef06.png" width="64" height="64" align="right" hspace="0">
+  <img src="https://user-images.githubusercontent.com/88411269/219728907-9b61862e-e35b-4d91-8d96-62dbc890d7f8.png" width="64" height="64" align="right" hspace="0">
   <h1>Road Map : </h1>
 </p>
 
 
+Your original text was already good, but here's a slightly revised version:
+
+Easy Dimension is a constantly evolving tool, and we are committed to improving it over time. To make Easy Dimension even better, we need your support and feedback. Our development roadmap is driven by user requests, so we encourage you to reach out to us for any questions, bug reports, or feature requests.
+
+Here's a look at some of the features we plan to implement in future versions:
+
+* Fix the aligned dimension dynamic target in free mode.
+* Create more sample scenes by integrating with popular virtual reality platforms.
+* Add input for the grab interactor component for target objects.
+* Enhance the text position control for area measures.
+* Include perimeter calculation for area measures.
+* Add interactive measures, such as rulers, plummets, bubble levels, and other cool measurement tools for VR usage.
+* Write more comments inside the scripts and make them more organized.
+* Add Preset Manager for Customized Settings
+* Improve the overall user interface and user experience.
+
+Thank you for your support, and we look forward to improving Easy Dimension with your feedback.
+
+---
+
+[<img src="https://user-images.githubusercontent.com/88411269/219645282-c0306215-ca1e-4197-96c7-8379672f75b4.png" alt="image with tooltip" width="40" height="40">](#Introduction "Go to introduction")
+[<img src="https://user-images.githubusercontent.com/88411269/219619899-da8e937c-7bae-48a0-8992-acfacd1df29f.png" alt="image with tooltip" width="40" height="40">](#ListOfContents "Go to list of contents")
+[<img src="https://user-images.githubusercontent.com/88411269/219728907-9b61862e-e35b-4d91-8d96-62dbc890d7f8.png" alt="image with tooltip" width="40" height="40">](#RoadMap "Go to Road Map")
+[<img src="https://user-images.githubusercontent.com/88411269/219729075-a7d27fc6-9c34-42be-adc3-f610c0d77f40.png" alt="image with tooltip" width="40" height="40">](#Limits "Go to Known Limitations of Easy Dimension")
+[<img src="https://user-images.githubusercontent.com/88411269/219647914-f014ed12-2e5c-425d-b604-0da18453ef06.png" alt="image with tooltip" width="40" height="40">](#Dependencies "Go to dependencies")
+[<img src="https://user-images.githubusercontent.com/88411269/219648415-9919a52a-e5eb-45bd-97ee-581fca6f0cee.png" alt="image with tooltip" width="40" height="40">](#QuickStart "Go to quick start")
+[<img src="https://user-images.githubusercontent.com/88411269/219654869-d21de237-5422-4ff4-93dc-ff2e0d1d417c.png" alt="image with tooltip" width="40" height="40">](#SettingsNotes "Go to Settings Notes")
+[<img src="https://user-images.githubusercontent.com/88411269/219646219-e6a6bcaf-617a-4eee-a909-485c5692c3ff.png" alt="image with tooltip" width="40" height="40">](#DimensionTypes "Go to Dimension Types")
+[<img src="https://user-images.githubusercontent.com/88411269/219649472-5ad5a904-a434-4bc6-900f-2d645ec347fb.png" alt="image with tooltip" width="40" height="40">](#ScriptingManual "Go to Scripting Manual")
+[<img src="https://user-images.githubusercontent.com/88411269/219649947-165046ae-42cc-4375-ad01-574a4c3a2f27.png" alt="image with tooltip" width="40" height="40">](#ScriptingAPI "Go to Scripting API")
+
+---
+
+<br/><br/>
 
 
+[//]: # (-----------------------------------# Known Limitations of Easy Dimension----------------------------------)
+
+<a name="Limits">
+  </a>
+
+<p>
+  <img src="https://user-images.githubusercontent.com/88411269/219729075-a7d27fc6-9c34-42be-adc3-f610c0d77f40.png" width="64" height="64" align="right" hspace="0">
+  <h1>Known Limitations of Easy Dimension : </h1>
+</p>
+
+As with any software package, there are some limitations to what you can do with Easy Dimension. We are committed to continually improving the package based on user feedback, and will update this section over time. Here are some limitations you should be aware of:
+
+* There may be some bugs when using aligned dimension in free mode, especially if you rotate the target object. It will be fixed soon.
+* The VR scripts are prepared for XR Interaction Toolkit 2.2.0. If you use another VR package, you may need to edit the VR script.
+* You can't specify the hovered and selected color for the dimensions. The color will always lerp to its original color.
+* We haven't worked on the settings preset manager yet, and if you need to have settings preset, you need to edit the scripts on your own until we implement it. If you have any questions, don't hesitate to ask.
+* We used TextMeshPro and Unity Default Line. Consider that we are limited to their boundary.
+* The VR scene is not included in this version. If you want to use it in VR, you need to download the sample VR script and follow the documentation to set up the VR based on your pipeline.
+
+We welcome your feedback and reports of any issues or limitations you encounter while using Easy Dimension. Together, we can continue to improve the package and make it the best it can be.
+
+---
+
+[<img src="https://user-images.githubusercontent.com/88411269/219645282-c0306215-ca1e-4197-96c7-8379672f75b4.png" alt="image with tooltip" width="40" height="40">](#Introduction "Go to introduction")
+[<img src="https://user-images.githubusercontent.com/88411269/219619899-da8e937c-7bae-48a0-8992-acfacd1df29f.png" alt="image with tooltip" width="40" height="40">](#ListOfContents "Go to list of contents")
+[<img src="https://user-images.githubusercontent.com/88411269/219728907-9b61862e-e35b-4d91-8d96-62dbc890d7f8.png" alt="image with tooltip" width="40" height="40">](#RoadMap "Go to Road Map")
+[<img src="https://user-images.githubusercontent.com/88411269/219729075-a7d27fc6-9c34-42be-adc3-f610c0d77f40.png" alt="image with tooltip" width="40" height="40">](#Limits "Go to Known Limitations of Easy Dimension")
+[<img src="https://user-images.githubusercontent.com/88411269/219647914-f014ed12-2e5c-425d-b604-0da18453ef06.png" alt="image with tooltip" width="40" height="40">](#Dependencies "Go to dependencies")
+[<img src="https://user-images.githubusercontent.com/88411269/219648415-9919a52a-e5eb-45bd-97ee-581fca6f0cee.png" alt="image with tooltip" width="40" height="40">](#QuickStart "Go to quick start")
+[<img src="https://user-images.githubusercontent.com/88411269/219654869-d21de237-5422-4ff4-93dc-ff2e0d1d417c.png" alt="image with tooltip" width="40" height="40">](#SettingsNotes "Go to Settings Notes")
+[<img src="https://user-images.githubusercontent.com/88411269/219646219-e6a6bcaf-617a-4eee-a909-485c5692c3ff.png" alt="image with tooltip" width="40" height="40">](#DimensionTypes "Go to Dimension Types")
+[<img src="https://user-images.githubusercontent.com/88411269/219649472-5ad5a904-a434-4bc6-900f-2d645ec347fb.png" alt="image with tooltip" width="40" height="40">](#ScriptingManual "Go to Scripting Manual")
+[<img src="https://user-images.githubusercontent.com/88411269/219649947-165046ae-42cc-4375-ad01-574a4c3a2f27.png" alt="image with tooltip" width="40" height="40">](#ScriptingAPI "Go to Scripting API")
+
+---
+
+
+<br/><br/>
 
 
 
@@ -273,6 +349,8 @@ if you need to use this package inside a **VR** game or app, there is a **Sample
 
 [<img src="https://user-images.githubusercontent.com/88411269/219645282-c0306215-ca1e-4197-96c7-8379672f75b4.png" alt="image with tooltip" width="40" height="40">](#Introduction "Go to introduction")
 [<img src="https://user-images.githubusercontent.com/88411269/219619899-da8e937c-7bae-48a0-8992-acfacd1df29f.png" alt="image with tooltip" width="40" height="40">](#ListOfContents "Go to list of contents")
+[<img src="https://user-images.githubusercontent.com/88411269/219728907-9b61862e-e35b-4d91-8d96-62dbc890d7f8.png" alt="image with tooltip" width="40" height="40">](#RoadMap "Go to Road Map")
+[<img src="https://user-images.githubusercontent.com/88411269/219729075-a7d27fc6-9c34-42be-adc3-f610c0d77f40.png" alt="image with tooltip" width="40" height="40">](#Limits "Go to Known Limitations of Easy Dimension")
 [<img src="https://user-images.githubusercontent.com/88411269/219647914-f014ed12-2e5c-425d-b604-0da18453ef06.png" alt="image with tooltip" width="40" height="40">](#Dependencies "Go to dependencies")
 [<img src="https://user-images.githubusercontent.com/88411269/219648415-9919a52a-e5eb-45bd-97ee-581fca6f0cee.png" alt="image with tooltip" width="40" height="40">](#QuickStart "Go to quick start")
 [<img src="https://user-images.githubusercontent.com/88411269/219654869-d21de237-5422-4ff4-93dc-ff2e0d1d417c.png" alt="image with tooltip" width="40" height="40">](#SettingsNotes "Go to Settings Notes")
@@ -338,6 +416,8 @@ congratulations, you made your first dimension!
 
 [<img src="https://user-images.githubusercontent.com/88411269/219645282-c0306215-ca1e-4197-96c7-8379672f75b4.png" alt="image with tooltip" width="40" height="40">](#Introduction "Go to introduction")
 [<img src="https://user-images.githubusercontent.com/88411269/219619899-da8e937c-7bae-48a0-8992-acfacd1df29f.png" alt="image with tooltip" width="40" height="40">](#ListOfContents "Go to list of contents")
+[<img src="https://user-images.githubusercontent.com/88411269/219728907-9b61862e-e35b-4d91-8d96-62dbc890d7f8.png" alt="image with tooltip" width="40" height="40">](#RoadMap "Go to Road Map")
+[<img src="https://user-images.githubusercontent.com/88411269/219729075-a7d27fc6-9c34-42be-adc3-f610c0d77f40.png" alt="image with tooltip" width="40" height="40">](#Limits "Go to Known Limitations of Easy Dimension")
 [<img src="https://user-images.githubusercontent.com/88411269/219647914-f014ed12-2e5c-425d-b604-0da18453ef06.png" alt="image with tooltip" width="40" height="40">](#Dependencies "Go to dependencies")
 [<img src="https://user-images.githubusercontent.com/88411269/219648415-9919a52a-e5eb-45bd-97ee-581fca6f0cee.png" alt="image with tooltip" width="40" height="40">](#QuickStart "Go to quick start")
 [<img src="https://user-images.githubusercontent.com/88411269/219654869-d21de237-5422-4ff4-93dc-ff2e0d1d417c.png" alt="image with tooltip" width="40" height="40">](#SettingsNotes "Go to Settings Notes")
@@ -399,6 +479,8 @@ The last three colors are used to multiply the dimension's color, either when se
 
 [<img src="https://user-images.githubusercontent.com/88411269/219645282-c0306215-ca1e-4197-96c7-8379672f75b4.png" alt="image with tooltip" width="40" height="40">](#Introduction "Go to introduction")
 [<img src="https://user-images.githubusercontent.com/88411269/219619899-da8e937c-7bae-48a0-8992-acfacd1df29f.png" alt="image with tooltip" width="40" height="40">](#ListOfContents "Go to list of contents")
+[<img src="https://user-images.githubusercontent.com/88411269/219728907-9b61862e-e35b-4d91-8d96-62dbc890d7f8.png" alt="image with tooltip" width="40" height="40">](#RoadMap "Go to Road Map")
+[<img src="https://user-images.githubusercontent.com/88411269/219729075-a7d27fc6-9c34-42be-adc3-f610c0d77f40.png" alt="image with tooltip" width="40" height="40">](#Limits "Go to Known Limitations of Easy Dimension")
 [<img src="https://user-images.githubusercontent.com/88411269/219647914-f014ed12-2e5c-425d-b604-0da18453ef06.png" alt="image with tooltip" width="40" height="40">](#Dependencies "Go to dependencies")
 [<img src="https://user-images.githubusercontent.com/88411269/219648415-9919a52a-e5eb-45bd-97ee-581fca6f0cee.png" alt="image with tooltip" width="40" height="40">](#QuickStart "Go to quick start")
 [<img src="https://user-images.githubusercontent.com/88411269/219654869-d21de237-5422-4ff4-93dc-ff2e0d1d417c.png" alt="image with tooltip" width="40" height="40">](#SettingsNotes "Go to Settings Notes")
@@ -724,7 +806,7 @@ This allows you to measure angles on planes that are not aligned with the main c
 Area Measure is a dimension tool that can calculate the area between some points. There are options to control the orientation of the text that is displayed for the area measurement.
 
 > **Note**<br/>
-> The always has lay down to the area surface.
+> The number always lays down on the surface of the measured area.
 
 <br/>
 
@@ -779,6 +861,8 @@ If you start drawing the area measure on an inclined plane or a ramp, the script
 
 [<img src="https://user-images.githubusercontent.com/88411269/219645282-c0306215-ca1e-4197-96c7-8379672f75b4.png" alt="image with tooltip" width="40" height="40">](#Introduction "Go to introduction")
 [<img src="https://user-images.githubusercontent.com/88411269/219619899-da8e937c-7bae-48a0-8992-acfacd1df29f.png" alt="image with tooltip" width="40" height="40">](#ListOfContents "Go to list of contents")
+[<img src="https://user-images.githubusercontent.com/88411269/219728907-9b61862e-e35b-4d91-8d96-62dbc890d7f8.png" alt="image with tooltip" width="40" height="40">](#RoadMap "Go to Road Map")
+[<img src="https://user-images.githubusercontent.com/88411269/219729075-a7d27fc6-9c34-42be-adc3-f610c0d77f40.png" alt="image with tooltip" width="40" height="40">](#Limits "Go to Known Limitations of Easy Dimension")
 [<img src="https://user-images.githubusercontent.com/88411269/219647914-f014ed12-2e5c-425d-b604-0da18453ef06.png" alt="image with tooltip" width="40" height="40">](#Dependencies "Go to dependencies")
 [<img src="https://user-images.githubusercontent.com/88411269/219648415-9919a52a-e5eb-45bd-97ee-581fca6f0cee.png" alt="image with tooltip" width="40" height="40">](#QuickStart "Go to quick start")
 [<img src="https://user-images.githubusercontent.com/88411269/219654869-d21de237-5422-4ff4-93dc-ff2e0d1d417c.png" alt="image with tooltip" width="40" height="40">](#SettingsNotes "Go to Settings Notes")
@@ -1148,6 +1232,8 @@ The only differences are the condition of going to the next step and how we get 
  
 [<img src="https://user-images.githubusercontent.com/88411269/219645282-c0306215-ca1e-4197-96c7-8379672f75b4.png" alt="image with tooltip" width="40" height="40">](#Introduction "Go to introduction")
 [<img src="https://user-images.githubusercontent.com/88411269/219619899-da8e937c-7bae-48a0-8992-acfacd1df29f.png" alt="image with tooltip" width="40" height="40">](#ListOfContents "Go to list of contents")
+[<img src="https://user-images.githubusercontent.com/88411269/219728907-9b61862e-e35b-4d91-8d96-62dbc890d7f8.png" alt="image with tooltip" width="40" height="40">](#RoadMap "Go to Road Map")
+[<img src="https://user-images.githubusercontent.com/88411269/219729075-a7d27fc6-9c34-42be-adc3-f610c0d77f40.png" alt="image with tooltip" width="40" height="40">](#Limits "Go to Known Limitations of Easy Dimension")
 [<img src="https://user-images.githubusercontent.com/88411269/219647914-f014ed12-2e5c-425d-b604-0da18453ef06.png" alt="image with tooltip" width="40" height="40">](#Dependencies "Go to dependencies")
 [<img src="https://user-images.githubusercontent.com/88411269/219648415-9919a52a-e5eb-45bd-97ee-581fca6f0cee.png" alt="image with tooltip" width="40" height="40">](#QuickStart "Go to quick start")
 [<img src="https://user-images.githubusercontent.com/88411269/219654869-d21de237-5422-4ff4-93dc-ff2e0d1d417c.png" alt="image with tooltip" width="40" height="40">](#SettingsNotes "Go to Settings Notes")
@@ -1669,5 +1755,18 @@ This component will add to all target objects. if any transform change happends 
 |`VR_SelectDimension()`          |`Method`                       |This void will call when using VR from ``` EzDimStarter ``` using ``` gameObject.SendMessage() ```  |
   
 <br/><br/>
+
+---
+
+[<img src="https://user-images.githubusercontent.com/88411269/219645282-c0306215-ca1e-4197-96c7-8379672f75b4.png" alt="image with tooltip" width="40" height="40">](#Introduction "Go to introduction")
+[<img src="https://user-images.githubusercontent.com/88411269/219619899-da8e937c-7bae-48a0-8992-acfacd1df29f.png" alt="image with tooltip" width="40" height="40">](#ListOfContents "Go to list of contents")
+[<img src="https://user-images.githubusercontent.com/88411269/219728907-9b61862e-e35b-4d91-8d96-62dbc890d7f8.png" alt="image with tooltip" width="40" height="40">](#RoadMap "Go to Road Map")
+[<img src="https://user-images.githubusercontent.com/88411269/219729075-a7d27fc6-9c34-42be-adc3-f610c0d77f40.png" alt="image with tooltip" width="40" height="40">](#Limits "Go to Known Limitations of Easy Dimension")
+[<img src="https://user-images.githubusercontent.com/88411269/219647914-f014ed12-2e5c-425d-b604-0da18453ef06.png" alt="image with tooltip" width="40" height="40">](#Dependencies "Go to dependencies")
+[<img src="https://user-images.githubusercontent.com/88411269/219648415-9919a52a-e5eb-45bd-97ee-581fca6f0cee.png" alt="image with tooltip" width="40" height="40">](#QuickStart "Go to quick start")
+[<img src="https://user-images.githubusercontent.com/88411269/219654869-d21de237-5422-4ff4-93dc-ff2e0d1d417c.png" alt="image with tooltip" width="40" height="40">](#SettingsNotes "Go to Settings Notes")
+[<img src="https://user-images.githubusercontent.com/88411269/219646219-e6a6bcaf-617a-4eee-a909-485c5692c3ff.png" alt="image with tooltip" width="40" height="40">](#DimensionTypes "Go to Dimension Types")
+[<img src="https://user-images.githubusercontent.com/88411269/219649472-5ad5a904-a434-4bc6-900f-2d645ec347fb.png" alt="image with tooltip" width="40" height="40">](#ScriptingManual "Go to Scripting Manual")
+[<img src="https://user-images.githubusercontent.com/88411269/219649947-165046ae-42cc-4375-ad01-574a4c3a2f27.png" alt="image with tooltip" width="40" height="40">](#ScriptingAPI "Go to Scripting API")
 
 ---
