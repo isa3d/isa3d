@@ -106,6 +106,8 @@ Our unity plugin is a comprehensive solution for creating dimensions in your pro
 [<img src="https://user-images.githubusercontent.com/88411269/219646219-e6a6bcaf-617a-4eee-a909-485c5692c3ff.png" alt="image with tooltip" width="40" height="40">](#DimensionTypes "Go to Dimension Types")
 [<img src="https://user-images.githubusercontent.com/88411269/219649472-5ad5a904-a434-4bc6-900f-2d645ec347fb.png" alt="image with tooltip" width="40" height="40">](#ScriptingManual "Go to Scripting Manual")
 [<img src="https://user-images.githubusercontent.com/88411269/219649947-165046ae-42cc-4375-ad01-574a4c3a2f27.png" alt="image with tooltip" width="40" height="40">](#ScriptingAPI "Go to Scripting API")
+[<img src="https://user-images.githubusercontent.com/88411269/219774510-56c06427-ec65-4e8c-8c08-33d621eed33f.png" alt="image with tooltip" width="40" height="40">](#Contact "Go to Contact")
+[<img src="https://user-images.githubusercontent.com/88411269/219775485-a9a2bbf6-a3d8-4880-93fb-e86d7c842448.png" alt="image with tooltip" width="40" height="40">](#Download "Go to Download")
 
 
 ---
@@ -209,6 +211,8 @@ Our unity plugin is a comprehensive solution for creating dimensions in your pro
 [<img src="https://user-images.githubusercontent.com/88411269/219646219-e6a6bcaf-617a-4eee-a909-485c5692c3ff.png" alt="image with tooltip" width="40" height="40">](#DimensionTypes "Go to Dimension Types")
 [<img src="https://user-images.githubusercontent.com/88411269/219649472-5ad5a904-a434-4bc6-900f-2d645ec347fb.png" alt="image with tooltip" width="40" height="40">](#ScriptingManual "Go to Scripting Manual")
 [<img src="https://user-images.githubusercontent.com/88411269/219649947-165046ae-42cc-4375-ad01-574a4c3a2f27.png" alt="image with tooltip" width="40" height="40">](#ScriptingAPI "Go to Scripting API")
+[<img src="https://user-images.githubusercontent.com/88411269/219774510-56c06427-ec65-4e8c-8c08-33d621eed33f.png" alt="image with tooltip" width="40" height="40">](#Contact "Go to Contact")
+[<img src="https://user-images.githubusercontent.com/88411269/219775485-a9a2bbf6-a3d8-4880-93fb-e86d7c842448.png" alt="image with tooltip" width="40" height="40">](#Download "Go to Download")
 
 
 ---
@@ -256,6 +260,8 @@ Thank you for your support, and we look forward to improving Easy Dimension with
 [<img src="https://user-images.githubusercontent.com/88411269/219646219-e6a6bcaf-617a-4eee-a909-485c5692c3ff.png" alt="image with tooltip" width="40" height="40">](#DimensionTypes "Go to Dimension Types")
 [<img src="https://user-images.githubusercontent.com/88411269/219649472-5ad5a904-a434-4bc6-900f-2d645ec347fb.png" alt="image with tooltip" width="40" height="40">](#ScriptingManual "Go to Scripting Manual")
 [<img src="https://user-images.githubusercontent.com/88411269/219649947-165046ae-42cc-4375-ad01-574a4c3a2f27.png" alt="image with tooltip" width="40" height="40">](#ScriptingAPI "Go to Scripting API")
+[<img src="https://user-images.githubusercontent.com/88411269/219774510-56c06427-ec65-4e8c-8c08-33d621eed33f.png" alt="image with tooltip" width="40" height="40">](#Contact "Go to Contact")
+[<img src="https://user-images.githubusercontent.com/88411269/219775485-a9a2bbf6-a3d8-4880-93fb-e86d7c842448.png" alt="image with tooltip" width="40" height="40">](#Download "Go to Download")
 
 ---
 
@@ -295,6 +301,8 @@ We welcome your feedback and reports of any issues or limitations you encounter 
 [<img src="https://user-images.githubusercontent.com/88411269/219646219-e6a6bcaf-617a-4eee-a909-485c5692c3ff.png" alt="image with tooltip" width="40" height="40">](#DimensionTypes "Go to Dimension Types")
 [<img src="https://user-images.githubusercontent.com/88411269/219649472-5ad5a904-a434-4bc6-900f-2d645ec347fb.png" alt="image with tooltip" width="40" height="40">](#ScriptingManual "Go to Scripting Manual")
 [<img src="https://user-images.githubusercontent.com/88411269/219649947-165046ae-42cc-4375-ad01-574a4c3a2f27.png" alt="image with tooltip" width="40" height="40">](#ScriptingAPI "Go to Scripting API")
+[<img src="https://user-images.githubusercontent.com/88411269/219774510-56c06427-ec65-4e8c-8c08-33d621eed33f.png" alt="image with tooltip" width="40" height="40">](#Contact "Go to Contact")
+[<img src="https://user-images.githubusercontent.com/88411269/219775485-a9a2bbf6-a3d8-4880-93fb-e86d7c842448.png" alt="image with tooltip" width="40" height="40">](#Download "Go to Download")
 
 ---
 
@@ -357,6 +365,8 @@ if you need to use this package inside a **VR** game or app, there is a **Sample
 [<img src="https://user-images.githubusercontent.com/88411269/219646219-e6a6bcaf-617a-4eee-a909-485c5692c3ff.png" alt="image with tooltip" width="40" height="40">](#DimensionTypes "Go to Dimension Types")
 [<img src="https://user-images.githubusercontent.com/88411269/219649472-5ad5a904-a434-4bc6-900f-2d645ec347fb.png" alt="image with tooltip" width="40" height="40">](#ScriptingManual "Go to Scripting Manual")
 [<img src="https://user-images.githubusercontent.com/88411269/219649947-165046ae-42cc-4375-ad01-574a4c3a2f27.png" alt="image with tooltip" width="40" height="40">](#ScriptingAPI "Go to Scripting API")
+[<img src="https://user-images.githubusercontent.com/88411269/219774510-56c06427-ec65-4e8c-8c08-33d621eed33f.png" alt="image with tooltip" width="40" height="40">](#Contact "Go to Contact")
+[<img src="https://user-images.githubusercontent.com/88411269/219775485-a9a2bbf6-a3d8-4880-93fb-e86d7c842448.png" alt="image with tooltip" width="40" height="40">](#Download "Go to Download")
 
 
 ---
@@ -424,6 +434,8 @@ congratulations, you made your first dimension!
 [<img src="https://user-images.githubusercontent.com/88411269/219646219-e6a6bcaf-617a-4eee-a909-485c5692c3ff.png" alt="image with tooltip" width="40" height="40">](#DimensionTypes "Go to Dimension Types")
 [<img src="https://user-images.githubusercontent.com/88411269/219649472-5ad5a904-a434-4bc6-900f-2d645ec347fb.png" alt="image with tooltip" width="40" height="40">](#ScriptingManual "Go to Scripting Manual")
 [<img src="https://user-images.githubusercontent.com/88411269/219649947-165046ae-42cc-4375-ad01-574a4c3a2f27.png" alt="image with tooltip" width="40" height="40">](#ScriptingAPI "Go to Scripting API")
+[<img src="https://user-images.githubusercontent.com/88411269/219774510-56c06427-ec65-4e8c-8c08-33d621eed33f.png" alt="image with tooltip" width="40" height="40">](#Contact "Go to Contact")
+[<img src="https://user-images.githubusercontent.com/88411269/219775485-a9a2bbf6-a3d8-4880-93fb-e86d7c842448.png" alt="image with tooltip" width="40" height="40">](#Download "Go to Download")
 
 ----
 
@@ -487,6 +499,8 @@ The last three colors are used to multiply the dimension's color, either when se
 [<img src="https://user-images.githubusercontent.com/88411269/219646219-e6a6bcaf-617a-4eee-a909-485c5692c3ff.png" alt="image with tooltip" width="40" height="40">](#DimensionTypes "Go to Dimension Types")
 [<img src="https://user-images.githubusercontent.com/88411269/219649472-5ad5a904-a434-4bc6-900f-2d645ec347fb.png" alt="image with tooltip" width="40" height="40">](#ScriptingManual "Go to Scripting Manual")
 [<img src="https://user-images.githubusercontent.com/88411269/219649947-165046ae-42cc-4375-ad01-574a4c3a2f27.png" alt="image with tooltip" width="40" height="40">](#ScriptingAPI "Go to Scripting API")
+[<img src="https://user-images.githubusercontent.com/88411269/219774510-56c06427-ec65-4e8c-8c08-33d621eed33f.png" alt="image with tooltip" width="40" height="40">](#Contact "Go to Contact")
+[<img src="https://user-images.githubusercontent.com/88411269/219775485-a9a2bbf6-a3d8-4880-93fb-e86d7c842448.png" alt="image with tooltip" width="40" height="40">](#Download "Go to Download")
 
 ---
 
@@ -869,6 +883,8 @@ If you start drawing the area measure on an inclined plane or a ramp, the script
 [<img src="https://user-images.githubusercontent.com/88411269/219646219-e6a6bcaf-617a-4eee-a909-485c5692c3ff.png" alt="image with tooltip" width="40" height="40">](#DimensionTypes "Go to Dimension Types")
 [<img src="https://user-images.githubusercontent.com/88411269/219649472-5ad5a904-a434-4bc6-900f-2d645ec347fb.png" alt="image with tooltip" width="40" height="40">](#ScriptingManual "Go to Scripting Manual")
 [<img src="https://user-images.githubusercontent.com/88411269/219649947-165046ae-42cc-4375-ad01-574a4c3a2f27.png" alt="image with tooltip" width="40" height="40">](#ScriptingAPI "Go to Scripting API")
+[<img src="https://user-images.githubusercontent.com/88411269/219774510-56c06427-ec65-4e8c-8c08-33d621eed33f.png" alt="image with tooltip" width="40" height="40">](#Contact "Go to Contact")
+[<img src="https://user-images.githubusercontent.com/88411269/219775485-a9a2bbf6-a3d8-4880-93fb-e86d7c842448.png" alt="image with tooltip" width="40" height="40">](#Download "Go to Download")
 
 ---
   
@@ -1240,6 +1256,8 @@ The only differences are the condition of going to the next step and how we get 
 [<img src="https://user-images.githubusercontent.com/88411269/219646219-e6a6bcaf-617a-4eee-a909-485c5692c3ff.png" alt="image with tooltip" width="40" height="40">](#DimensionTypes "Go to Dimension Types")
 [<img src="https://user-images.githubusercontent.com/88411269/219649472-5ad5a904-a434-4bc6-900f-2d645ec347fb.png" alt="image with tooltip" width="40" height="40">](#ScriptingManual "Go to Scripting Manual")
 [<img src="https://user-images.githubusercontent.com/88411269/219649947-165046ae-42cc-4375-ad01-574a4c3a2f27.png" alt="image with tooltip" width="40" height="40">](#ScriptingAPI "Go to Scripting API")
+[<img src="https://user-images.githubusercontent.com/88411269/219774510-56c06427-ec65-4e8c-8c08-33d621eed33f.png" alt="image with tooltip" width="40" height="40">](#Contact "Go to Contact")
+[<img src="https://user-images.githubusercontent.com/88411269/219775485-a9a2bbf6-a3d8-4880-93fb-e86d7c842448.png" alt="image with tooltip" width="40" height="40">](#Download "Go to Download")
 
 ---
  
@@ -1768,5 +1786,81 @@ This component will add to all target objects. if any transform change happends 
 [<img src="https://user-images.githubusercontent.com/88411269/219646219-e6a6bcaf-617a-4eee-a909-485c5692c3ff.png" alt="image with tooltip" width="40" height="40">](#DimensionTypes "Go to Dimension Types")
 [<img src="https://user-images.githubusercontent.com/88411269/219649472-5ad5a904-a434-4bc6-900f-2d645ec347fb.png" alt="image with tooltip" width="40" height="40">](#ScriptingManual "Go to Scripting Manual")
 [<img src="https://user-images.githubusercontent.com/88411269/219649947-165046ae-42cc-4375-ad01-574a4c3a2f27.png" alt="image with tooltip" width="40" height="40">](#ScriptingAPI "Go to Scripting API")
+[<img src="https://user-images.githubusercontent.com/88411269/219774510-56c06427-ec65-4e8c-8c08-33d621eed33f.png" alt="image with tooltip" width="40" height="40">](#Contact "Go to Contact")
+[<img src="https://user-images.githubusercontent.com/88411269/219775485-a9a2bbf6-a3d8-4880-93fb-e86d7c842448.png" alt="image with tooltip" width="40" height="40">](#Download "Go to Download")
 
 ---
+
+<br/><br/>
+
+[//]: # (-----------------------------------# Contact :----------------------------------)
+
+<a name="Contact">
+  </a>
+  
+
+<p>
+  <img src="https://user-images.githubusercontent.com/88411269/219774510-56c06427-ec65-4e8c-8c08-33d621eed33f.png" width="64" height="64" align="right" hspace="0">
+  <h1>Contact :</h1>
+</p>
+
+If you require immediate assistance, you can contact me through Telegram Messenger. However, please only use this method in urgent situations. For general inquiries, please email me, and I will try to respond your message within 24 hours. If there is any delay in my response, please do not worry as I will get back to you as soon as possible.
+
+You can send me a direct message or email by CTRL+click (on Windows and Linux) or CMD+click (on MacOS) on the icons below. Your feedback and bug reports are valuable to us, and we appreciate your input.
+
+Thank you,
+Eisa Shadmani.
+
+<a href="mailto:isa.shademani@gmail.com" title="Send e-mail"><img src="https://user-images.githubusercontent.com/88411269/219762727-974e0a58-b667-4f1a-bd55-2a6a94624194.png" alt="image with tooltip" width="40" height="40"></a>
+[<img src="https://user-images.githubusercontent.com/88411269/219762446-6a47512e-251b-4135-841e-ee4e1f5e3d0f.png" alt="image with tooltip" width="40" height="40">](https://t.me/itseisa "Send Message")
+
+---
+
+[<img src="https://user-images.githubusercontent.com/88411269/219645282-c0306215-ca1e-4197-96c7-8379672f75b4.png" alt="image with tooltip" width="40" height="40">](#Introduction "Go to introduction")
+[<img src="https://user-images.githubusercontent.com/88411269/219619899-da8e937c-7bae-48a0-8992-acfacd1df29f.png" alt="image with tooltip" width="40" height="40">](#ListOfContents "Go to list of contents")
+[<img src="https://user-images.githubusercontent.com/88411269/219728907-9b61862e-e35b-4d91-8d96-62dbc890d7f8.png" alt="image with tooltip" width="40" height="40">](#RoadMap "Go to Road Map")
+[<img src="https://user-images.githubusercontent.com/88411269/219729075-a7d27fc6-9c34-42be-adc3-f610c0d77f40.png" alt="image with tooltip" width="40" height="40">](#Limits "Go to Known Limitations of Easy Dimension")
+[<img src="https://user-images.githubusercontent.com/88411269/219647914-f014ed12-2e5c-425d-b604-0da18453ef06.png" alt="image with tooltip" width="40" height="40">](#Dependencies "Go to dependencies")
+[<img src="https://user-images.githubusercontent.com/88411269/219648415-9919a52a-e5eb-45bd-97ee-581fca6f0cee.png" alt="image with tooltip" width="40" height="40">](#QuickStart "Go to quick start")
+[<img src="https://user-images.githubusercontent.com/88411269/219654869-d21de237-5422-4ff4-93dc-ff2e0d1d417c.png" alt="image with tooltip" width="40" height="40">](#SettingsNotes "Go to Settings Notes")
+[<img src="https://user-images.githubusercontent.com/88411269/219646219-e6a6bcaf-617a-4eee-a909-485c5692c3ff.png" alt="image with tooltip" width="40" height="40">](#DimensionTypes "Go to Dimension Types")
+[<img src="https://user-images.githubusercontent.com/88411269/219649472-5ad5a904-a434-4bc6-900f-2d645ec347fb.png" alt="image with tooltip" width="40" height="40">](#ScriptingManual "Go to Scripting Manual")
+[<img src="https://user-images.githubusercontent.com/88411269/219649947-165046ae-42cc-4375-ad01-574a4c3a2f27.png" alt="image with tooltip" width="40" height="40">](#ScriptingAPI "Go to Scripting API")
+[<img src="https://user-images.githubusercontent.com/88411269/219774510-56c06427-ec65-4e8c-8c08-33d621eed33f.png" alt="image with tooltip" width="40" height="40">](#Contact "Go to Contact")
+[<img src="https://user-images.githubusercontent.com/88411269/219775485-a9a2bbf6-a3d8-4880-93fb-e86d7c842448.png" alt="image with tooltip" width="40" height="40">](#Download "Go to Download")
+
+
+---
+
+<br/><br/>
+
+[//]: # (-----------------------------------# Download :----------------------------------)
+
+<a name="Download">
+  </a>
+  
+
+<p>
+  <img src="https://user-images.githubusercontent.com/88411269/219775485-a9a2bbf6-a3d8-4880-93fb-e86d7c842448.png" width="64" height="64" align="right" hspace="0">
+  <h1>Download :</h1>
+</p>
+
+This package will soon be available on the Unity Asset Store. We will provide the purchase link as soon as it is published.
+
+---
+
+[<img src="https://user-images.githubusercontent.com/88411269/219645282-c0306215-ca1e-4197-96c7-8379672f75b4.png" alt="image with tooltip" width="40" height="40">](#Introduction "Go to introduction")
+[<img src="https://user-images.githubusercontent.com/88411269/219619899-da8e937c-7bae-48a0-8992-acfacd1df29f.png" alt="image with tooltip" width="40" height="40">](#ListOfContents "Go to list of contents")
+[<img src="https://user-images.githubusercontent.com/88411269/219728907-9b61862e-e35b-4d91-8d96-62dbc890d7f8.png" alt="image with tooltip" width="40" height="40">](#RoadMap "Go to Road Map")
+[<img src="https://user-images.githubusercontent.com/88411269/219729075-a7d27fc6-9c34-42be-adc3-f610c0d77f40.png" alt="image with tooltip" width="40" height="40">](#Limits "Go to Known Limitations of Easy Dimension")
+[<img src="https://user-images.githubusercontent.com/88411269/219647914-f014ed12-2e5c-425d-b604-0da18453ef06.png" alt="image with tooltip" width="40" height="40">](#Dependencies "Go to dependencies")
+[<img src="https://user-images.githubusercontent.com/88411269/219648415-9919a52a-e5eb-45bd-97ee-581fca6f0cee.png" alt="image with tooltip" width="40" height="40">](#QuickStart "Go to quick start")
+[<img src="https://user-images.githubusercontent.com/88411269/219654869-d21de237-5422-4ff4-93dc-ff2e0d1d417c.png" alt="image with tooltip" width="40" height="40">](#SettingsNotes "Go to Settings Notes")
+[<img src="https://user-images.githubusercontent.com/88411269/219646219-e6a6bcaf-617a-4eee-a909-485c5692c3ff.png" alt="image with tooltip" width="40" height="40">](#DimensionTypes "Go to Dimension Types")
+[<img src="https://user-images.githubusercontent.com/88411269/219649472-5ad5a904-a434-4bc6-900f-2d645ec347fb.png" alt="image with tooltip" width="40" height="40">](#ScriptingManual "Go to Scripting Manual")
+[<img src="https://user-images.githubusercontent.com/88411269/219649947-165046ae-42cc-4375-ad01-574a4c3a2f27.png" alt="image with tooltip" width="40" height="40">](#ScriptingAPI "Go to Scripting API")
+[<img src="https://user-images.githubusercontent.com/88411269/219774510-56c06427-ec65-4e8c-8c08-33d621eed33f.png" alt="image with tooltip" width="40" height="40">](#Contact "Go to Contact")
+[<img src="https://user-images.githubusercontent.com/88411269/219775485-a9a2bbf6-a3d8-4880-93fb-e86d7c842448.png" alt="image with tooltip" width="40" height="40">](#Download "Go to Download")
+
+---
+
