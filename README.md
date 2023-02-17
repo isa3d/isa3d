@@ -1,3 +1,5 @@
-Hello and welcome to my GitHub page! I'm a game artist with experience in the game industry and multimedia. I've worked on AAA games like Dirt 5 in Codemasters, and now I spend most of my time working with Unity and C# to create engaging and immersive gaming experiences.
+# Coming Soon :
 
-In addition to my work in the game industry, I'm passionate about learning and expanding my skill set. I have a strong interest in mathematics, coding, and AI, and have been dedicated to learning more about these areas. I'm also interested in exploring the world of virtual reality and creating experiences that truly immerse the user. Thank you for stopping by my page and feel free to explore my projects!
+Easy Dimension is an upcoming measurement system for Unity that aims to simplify and streamline the process of creating accurate measurements in 3D space. With this tool, users will be able to easily measure distances, angles, and areas within their Unity projects. Whether you're an architect, game developer, or 3D artist, Easy Dimension will be a valuable addition to your toolkit. Keep an eye out for its release on the Unity Asset Store in the near future!
+
+![DimensionsType](https://user-images.githubusercontent.com/88411269/219785119-081c4601-8668-4cc3-b960-54b1eb3b3d75.jpg)
