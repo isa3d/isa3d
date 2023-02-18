@@ -138,6 +138,15 @@ Our unity plugin is a comprehensive solution for creating dimensions in your pro
 </details>
 
 <details>
+<summary>Road Map And Limits </summary>
+
+* [Road Map](#RoadMap)
+* [Known Limitations of Easy Dimension](#Limits)
+
+</details>
+
+
+<details>
 <summary>Dependencies</summary>
 
 * [Input System](#Dependencies_InputSystem)
@@ -193,6 +202,15 @@ Our unity plugin is a comprehensive solution for creating dimensions in your pro
 * [EzDynamicTargetObject](#ScriptingAPI_EzDynamicTargetObject)
 * [EzDimStarter](#ScriptingAPI_EzDimStarter)
 * [DrawInVR](#ScriptingAPI_DrawInVR)
+ 
+ </details>
+ 
+ <details>
+<summary>Contact / Download </summary>
+
+* [Contact](#Contact)
+* [Download](#Download)
+
  
  </details>
   
