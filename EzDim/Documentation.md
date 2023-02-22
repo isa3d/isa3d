@@ -254,6 +254,7 @@ Easy Dimension is a constantly evolving tool, and we are committed to improving 
 
 Here's a look at some of the features we plan to implement in future versions:
 
+* Editor Support.
 * Fix the aligned dimension dynamic target in free mode.
 * Create more sample scenes by integrating with popular virtual reality platforms.
 * Add input for the grab interactor component for target objects.
@@ -298,7 +299,8 @@ Thank you for your support, and we look forward to improving Easy Dimension with
 
 As with any software package, there are some limitations to what you can do with Easy Dimension. We are committed to continually improving the package based on user feedback, and will update this section over time. Here are some limitations you should be aware of:
 
-* There may be some bugs when using aligned dimension in free mode, especially if you rotate the target object. It will be fixed soon.
+* This package is currently only functional during runtime. Editor support is on the roadmap, but if you require it sooner, please make a request.
+* There may be some bugs when using aligned and angle dimensions in free mode, especially if you rotate the target object. It will be fixed soon.
 * The VR scripts are prepared for XR Interaction Toolkit 2.2.0. If you use another VR package, you may need to edit the VR script.
 * You can't specify the hovered and selected color for the dimensions. The color will always lerp to its original color.
 * We haven't worked on the settings preset manager yet, and if you need to have settings preset, you need to edit the scripts on your own until we implement it. If you have any questions, don't hesitate to ask.
@@ -727,6 +729,12 @@ In this type of dimension, the positive direction of the offset distance is base
 There are four states for the direction plane (XZ, XY, ZY, Free). If you set the direction offset to Free before creating the dimension, after selecting points A and B, a plane appears, and you can dictate your custom offset direction by clicking on the appeared plane, which is the input of the "Aligned Dim Free Mode Plane Prefab". The position of this point will be stored in "Direction Point in Free Mode". So, if you don’t change this value and switch the direction plane, you can change it to Free mode again later. Alternatively, you can change the direction by editing this value. However, please be aware that if you use the free mode, it does not support transform change yet. Turn off "Is Dynamic" if you want to use it on any moving object. We have this on our roadmap, and we will make it possible in the next updates.
 
 
+<br/>
+
+> **Warning**
+> aligned dimensions in free mode are not currently supported target objects rotation. it will fix in updates soon.
+
+
 <br/><br/>
 
 <a name="DimensionTypes_AngleDimension">
@@ -773,13 +781,6 @@ The arc of the angle dimension is beautifully crafted with the help of its mater
 
 <br/>
 
-
-> **Warning**
-> The angle dimension is not yet supported for dynamic objects.
-
-
-<br/>
-
 <a name="DimensionTypes_AngleDimension_TextPosIfNotFit">
   </a>
 
@@ -817,7 +818,6 @@ The angle dimension can be drawn in the main planes (XZ, XY, YZ) or on a custom 
 
 This allows you to measure angles on planes that are not aligned with the main coordinate axes. By selecting the appropriate points, you can define any plane and measure angles on it with the angle dimension.
 
-<br/>
 
 > **Note**<br/>
 > To reduce any intersection between the dimension and target objects, you can increase the`normalOffset` parameter if the dimension is individual or `hitNormalOffset` in the starter script if it's not individual. This parameter will get the first hit point normal and move the dimension along it forward. It will also help to avoid Z-fighting. Always set it to a small amount.
@@ -872,6 +872,11 @@ The "Area Measure" tool consists of four main parts: handles, surface, border, a
 <img src="https://user-images.githubusercontent.com/88411269/217532878-b0909a77-cae2-4537-bbb8-2112ced2d468.gif" width="500">
 
 The "Area Measure" component supports dynamic transform, which means that it updates the area automatically when you move any of its handles. If you have made the handle prefab selectable or moveable in your project, the area measure will be able to track changes made to the handle positions. It's important to note that there is no "IsDynamic" Boolean in this component. So, as long as you change the position of any handle, the area will be updated automatically.
+
+<br/>
+
+> **Warning**
+> Area dimensions for dynamic objects are not currently supported. They are only updated when the handle position is changed and will not connect automatically to the target objects.
 
 <br/>
 
