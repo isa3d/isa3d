@@ -833,6 +833,14 @@ This allows you to measure angles on planes that are not aligned with the main c
 
 ## Area Measure :
 
+> **Note**<br/>
+> 
+> The area measure tool creates a surface between the points. To perform triangulation, we utilize "EarCut Master". Please visit the EarCut Master Github page for more information. <br/> 
+> https://github.com/mapbox/earcut
+> <br/> <br/> 
+> its using "ISC License". <br/> 
+> ![image](https://user-images.githubusercontent.com/88411269/220639279-bbe72170-fc93-4a15-bf76-4411c9fcb8c4.png)
+
 <br/>
 
 Area Measure is a dimension tool that can calculate the area between some points. There are options to control the orientation of the text that is displayed for the area measurement.
