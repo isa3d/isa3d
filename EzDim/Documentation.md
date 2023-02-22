@@ -675,7 +675,7 @@ The Linear Dimension can be drawn in the Z axis and offset to the X axis, allowi
 
 <img src="https://user-images.githubusercontent.com/88411269/216859356-eeec3929-5b8b-4f1e-b2f7-7e8d55269389.png" width="500">
 
-If the offset distance is less than the distance between the two target points, the dimension will automatically adjust the secondary lines to ensure it always connects to the target points.
+If the measured distance is less than the distance between the two target points along the measured direction, the dimension will automatically change the dimension appearance if you activate ``autoTextPositin`` option.
 
 ---
 <br/><br/>
