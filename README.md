@@ -1,4 +1,4 @@
-# Coming Soon :
+# EzDim Unity Package :
 
 Easy Dimension is an upcoming measurement system for Unity that aims to simplify and streamline the process of creating accurate measurements in 3D space. With this tool, users will be able to easily measure distances, angles, and areas within their Unity projects. Whether you're an architect, game developer, or 3D artist, Easy Dimension will be a valuable addition to your toolkit. Keep an eye out for its release on the Unity Asset Store in the near future!
 
