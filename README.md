@@ -6,7 +6,7 @@ Easy Dimension is an upcoming measurement system for Unity that aims to simplify
 
 [**The documentation is available by clicking here**](https://github.com/isa3d/isa3d/blob/easy-dimension-measurement-system-unity/EzDim/Documentation.md) 
 
-<br/><br/>
+<br/>
 
 [//]: # (-----------------------------------# Contact :----------------------------------)
 
