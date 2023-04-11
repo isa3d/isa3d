@@ -248,8 +248,6 @@ Our unity plugin is a comprehensive solution for creating dimensions in your pro
 </p>
 
 
-Your original text was already good, but here's a slightly revised version:
-
 Easy Dimension is a constantly evolving tool, and we are committed to improving it over time. To make Easy Dimension even better, we need your support and feedback. Our development roadmap is driven by user requests, so we encourage you to reach out to us for any questions, bug reports, or feature requests.
 
 Here's a look at some of the features we plan to implement in future versions:
