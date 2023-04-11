@@ -863,7 +863,7 @@ Area Measure is a dimension tool that can calculate the area between some points
 <a name="DimensionTypes_AreaMeasure_OverView">
   </a>
   
-### OverView :
+### Overview :
 
 <img src="https://user-images.githubusercontent.com/88411269/217532420-782710b7-e115-4416-b440-8c89d16e1456.png" width="500">
 
@@ -989,7 +989,7 @@ If only working with mouse input, there is no need for "DrawInVR." As a result, 
  
  ````
  
- At the beginning, it checks that the `isCreating` Boolean is off to avoid the duplication of the creation process. Then, it will turn on `isCreating` and will deselect the selected dimensions by clearing the `selectionList`. After that, it calls the `updateAll` function from `EzDimFunctions` to update the dimensions' appearance based on the new cleared `selectionList`. Now everything is ready to create a GameObject as a child of this GameObject to add the `PointToPointDimension` component. Then, the code will loop inside the `IEnumerator CreatePointToPointDimension()` while the added `PointToPointDimension` component `isDone` Boolean is not true. This Boolean will be set to true at the end of this IEnumerator. When this part is passed, the new dimension will be added to the `dimensionsList` as a new dimension.
+At the beginning, it checks that the `isCreating` Boolean is off to avoid the duplication of the creation process. Then, it will turn on `isCreating` and will deselect the selected dimensions by clearing the `selectionList`. After that, it calls the `updateAll` function from `EzDimFunctions` to update the dimensions' appearance based on the new cleared `selectionList`. Now everything is ready to create a GameObject as a child of this GameObject to add the `PointToPointDimension` component. Then, the code will loop inside the `IEnumerator CreatePointToPointDimension()` while the added `PointToPointDimension` component `isDone` Boolean is not true. This Boolean will be set to true at the end of this IEnumerator. When this part is passed, the new dimension will be added to the `dimensionsList` as a new dimension.
 
 Let's check what is inside the `IEnumerator CreatePointToPointDimension()`:
  
@@ -1100,7 +1100,7 @@ This process has the same logic for all dimensions. The `EzDimStarter` always cr
     
 ```
 
-Yes, that is correct. There are `CreateDimension()` and `UpdateDimension()` voids inside all of the dimension components except for the area measure. Some dimensions also have additional functions, such as `UpdateTextTransform()` in `pointToPointDimension.cs`, `LinearDimension.cs`, and `AlignedDimension.cs`, and `UpdateTextAndIndicator()` in `AngleDimension.cs`.
+There are `CreateDimension()` and `UpdateDimension()` voids inside all of the dimension components except for the area measure. Some dimensions also have additional functions, such as `UpdateTextTransform()` in `pointToPointDimension.cs`, `LinearDimension.cs`, and `AlignedDimension.cs`, and `UpdateTextAndIndicator()` in `AngleDimension.cs`.
 
 The `LinearAreaMeasure.cs` component does not have `CreateDimension()`, `Start()`, or `Update()` voids. Instead, required gameObjects are created in the `Awake()` void, and there are five other voids named `UpdatePointsList()`, `UpdateBorderLine()`, `DrawArea()`, `UpdateAreaNumber()`, and `UpdateNumberPositionAndRotation()`.
 
