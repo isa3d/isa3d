@@ -92,7 +92,7 @@ Our unity plugin is a comprehensive solution for creating dimensions in your pro
 * full control of texts size, lines thickness, arrows size , etc... .
 * change the parameters for all dimensions or disconnect some of them to have individual properties.
 * Trigger event when selection changed and when mouse hovered on a dimension.
-* diffrent types of offset to avoid Zfighting and text coverage behind the scene objects.
+* different types of offset to avoid Zfighting and text coverage behind the scene objects.
 
 ---
 
