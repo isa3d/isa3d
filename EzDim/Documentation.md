@@ -82,7 +82,7 @@ Our unity plugin is a comprehensive solution for creating dimensions in your pro
 
 * Compatible by Mobile Devices, AR & VR.
 * support dynamic transforms. if you move, rotate or scale the target objects in runtime, the dimension start and end will update correctly.
-* Support Units (Milimeters, Centimeters, Meters, Inch, Foot, Yard).
+* Support Units (Millimeter, Centimeter, Meter, Inch, Foot, Yard).
 * Support Custom Unit if you need a unit that was not in the units list.
 * Update TextPosition manually and automatic based on camera position .
 * Having control on the materials of each part.
