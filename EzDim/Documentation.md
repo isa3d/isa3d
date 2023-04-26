@@ -1877,7 +1877,8 @@ Eisa Shadmani.
   <h1>Download :</h1>
 </p>
 
-This package will soon be available on the Unity Asset Store. We will provide the purchase link as soon as it is published.
+You can buy the asset from the Unity Asset Store :
+https://assetstore.unity.com/packages/tools/utilities/easy-dimension-measurement-system-242558
 
 ---
 
