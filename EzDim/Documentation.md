@@ -368,7 +368,8 @@ This package uses **TextMeshPro** too. Install it from package manager if you do
   
 ## XR Interaction Toolkit (Optional) :
 
-if you need to use this package inside a **VR** game or app, there is a **Sample VR Script** that you can download it from package manager in the sample section. before downloading it you need to install **XR Interaction Toolkit 2.2.0** to use this sample. also you can write your own **VR Script** sample. We recommend to check the sample script because the **VR Script** should work with the starter Script properly. for more details about using this package for **HMD** check the [**Using EzDimension in VR**](#ScriptingManual_VR).
+if you need to use this package inside a **VR** game or app, there is a **Sample VR Script** that you can download it [Here](https://github.com/user-attachments/files/16608183/Sample_VR.zip).
+. before downloading it you need to install **XR Interaction Toolkit 2.2.0** to use this sample. also you can write your own **VR Script** sample. We recommend to check the sample script because the **VR Script** should work with the starter Script properly. for more details about using this package for **HMD** check the [**Using EzDimension in VR**](#ScriptingManual_VR).
 
 
 ---
@@ -1125,7 +1126,7 @@ There are more specific details in the [Scripting API](#ScriptingAPI) section.
 
 ![FlowChart_VR](https://user-images.githubusercontent.com/88411269/218101925-17dd1bf1-86c5-4565-b7af-bd6e18f5ee11.png)
 
-To use Easy Dimension Measurement System in VR, you can download the **VR Sample Script** from the package manager to see how to set up the system for VR. This script is fully compatible with **XR Interaction Toolkit 2.2.0**. Since there are various VR integration packages, we won't include the VR scene inside the package to avoid any conflict and messy errors in your scene. Instead, we will look at the main logic of using Easy Dimension inside your VR scene.
+To use Easy Dimension Measurement System in VR, you can download the **VR Sample Script** [Here](https://github.com/user-attachments/files/16608183/Sample_VR.zip) to see how to set up the system for VR. This script is fully compatible with **XR Interaction Toolkit 2.2.0**. Since there are various VR integration packages, we won't include the VR scene inside the package to avoid any conflict and messy errors in your scene. Instead, we will look at the main logic of using Easy Dimension inside your VR scene.
 
 <br/>
 
@@ -1156,7 +1157,7 @@ In Easy Dimension, there are some differences between using mouse input and VR i
 
 ### Practical Example :
 
-To ensure that you understand how to use the **DrawInVR.cs** component, let's look at an example. You can download the **DrawInVR.cs** sample from the package manager and open it. In this sample, you will find some public void functions that are similar to the ones we saw in the **EzDimStarter** component.
+To ensure that you understand how to use the **DrawInVR.cs** component, let's look at an example. You can download the **DrawInVR.cs** sample [Here](https://github.com/user-attachments/files/16608183/Sample_VR.zip) and open it. In this sample, you will find some public void functions that are similar to the ones we saw in the **EzDimStarter** component.
 
 ```C#
 
@@ -1917,4 +1918,5 @@ https://assetstore.unity.com/packages/tools/utilities/easy-dimension-measurement
 [//]: # (#https://user-images.githubusercontent.com/88411269/232199336-1ee90735-a6d9-457b-acf7-eaf9e3244477.png)
 
 [//]: # (https://user-images.githubusercontent.com/88411269/234413273-0c4899ff-d53a-4002-b607-b863b46061e9.png)
+
 
